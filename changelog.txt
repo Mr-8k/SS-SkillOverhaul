@@ -5,3 +5,4 @@
 -Weapon Drills bonus up to 7.5
 -Special Modifications lost extra built in, regained 10% OP bonus
 -Wolfpack tactics grants halved bonus to destroyers
+-Version checker integration
