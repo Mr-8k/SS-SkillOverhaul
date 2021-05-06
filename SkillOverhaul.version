@@ -1,5 +1,5 @@
 {
-    "masterVersionFile":"https://raw.githubusercontent.com/Mr-8k/SS-SkillOverhaul/main/ES_Pack.version",
+    "masterVersionFile":"https://raw.githubusercontent.com/Mr-8k/SS-SkillOverhaul/master/SkillOverhaul.version",
     "modName":"ES Pack",
     # The current patch number
     # Notation is major.minor.patch; trailing zeros are ignored
