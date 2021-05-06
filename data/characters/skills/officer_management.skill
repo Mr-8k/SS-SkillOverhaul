@@ -1,0 +1,33 @@
+{
+	"id":"officer_management",
+	"governingAptitude":"leadership",
+	"compressHullmods":false,
+	"elite":true,
+	"scope":"FLEET",
+	"permanent":true,
+	"effectGroups":[
+		{
+			"requiredSkillLevel":0,
+			"effects":[
+				{"type":"DESCRIPTION", "script":"data.characters.skills.scripts.OfficerManagement$Level0"},
+			]
+		},
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagement$Level1"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagement$Level1B"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagement$AgentBonus"},
+			]
+		},
+		{
+			"name":"Elite",
+			"requiredSkillLevel":2,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagement$Level2"},
+			]
+		},
+	],
+}

@@ -1,0 +1,26 @@
+{
+	"id":"special_modifications",
+	"governingAptitude":"technology",
+	"compressHullmods":false,
+	"permanent":true,
+	"scope":CUSTOM,
+	"scopeStr":"ship loadouts",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":0,
+			"effects":[
+				{"type":"DESCRIPTION", "script":"data.characters.skills.scripts.SpecialModifications$Level0"},
+			]
+		},
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.SpecialModifications$Level1"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.SpecialModifications$Level2"},
+				#{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.SpecialModifications$Level3"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.SpecialModifications$Level4"},
+			]
+		},
+	],
+}

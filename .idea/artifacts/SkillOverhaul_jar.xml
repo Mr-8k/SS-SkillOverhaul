@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SkillOverhaul:jar">
+    <output-path>$PROJECT_DIR$/jars</output-path>
+    <root id="archive" name="ESP_Skill_Overhaul.jar">
+      <element id="module-output" name="SkillOverhaul" />
+    </root>
+  </artifact>
+</component>

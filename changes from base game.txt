@@ -1,0 +1,33 @@
+COMBAT
+-Target analysis normalized to 15% damage to all ships
+-Shield modulation renamed to defensive systems, merged with phase mastery
+-Phase mastery replaced with ordinance expertise, increasing shield damage and armor damage much like target analysis used to
+
+LEADERSHIP
+-Weapon drills bonus down to 7.5%, dp limit removed
+-Auxiliary support bonus down to 300%, dp limit removed
+-Coordinated maneuvers nav bonus affected by all ships depending on size (as it used to) (as opposed to only officered midgets)
+-Crew training dp limit removed
+-Carrier group replacement rate bonus reduced from 50% to 25%, bay limit removed, added 15% fighter damage resistance
+-Officer management gains elite level for additional +2 officers
+-Wolfpack tactics grants halved bonus to destroyers
+
+TECHNOLOGY
+-Gunnery implants no longer offer ECM rating under any circumstances
+-Electronic warfare ECM bonus affected by ships depending on size (as it used to)
+-Fighter uplink bay limit removed, added 10% replacement rate bonus
+-Flux regulation bonuses down to +10%/+10% from +20%/+20%, dp limit removed, gains elite level allowing flagship to vent faster
+-Phase Corps bonus down to -10%/+60s from -30%/+180s, absurdly small dp limit removed
+-Automated ships dp limit removed
+-Special Modifications lost extra built in, regained 10% OP bonus
+
+INDUSTRY
+-Containment procedures crew loss bonus down to 50% from 75%, fuel consumption reduction to flat 25% from the lower of 25 or 50%, dp limit removed
+-Makeshift equipment maint reduction to 25% from the lower of 50% or 100 units
+-Field repairs dp limit removed
+-Derelict contingent: effects removed, replaced with reduced dmod effect and reduced maint per dmod
+
+ADDITIONAL CHANGES
+-Skills can be chosen in any order
+-Max level is now 40, exp requirements have been adjusted (may be too low, need further testing)
+-Attempted officer spam fix by editing "officerAIMercsStartingFP" (just so you know this mod edits that value, you can remove it from the mod/data/config/settings json if you so please)
