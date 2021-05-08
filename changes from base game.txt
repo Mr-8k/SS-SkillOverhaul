@@ -4,7 +4,7 @@ COMBAT
 -Phase mastery replaced with ordinance expertise, increasing shield damage and armor damage much like target analysis used to
 
 LEADERSHIP
--Weapon drills bonus down to 7.5%, dp limit removed
+-Weapon drills bonus down to 7%, dp limit removed
 -Auxiliary support bonus down to 300%, dp limit removed
 -Coordinated maneuvers nav bonus affected by all ships depending on size (as it used to) (as opposed to only officered midgets)
 -Crew training dp limit removed

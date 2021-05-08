@@ -1,3 +1,6 @@
+1.0.2
+-Weapon Drills bonus down to 7% (mostly for rounding reasons)
+
 1.0.1
 -Fighter uplink gains 10% bonus replacement rate
 -Carrier group added 15% fighter damage resistance
