@@ -49,7 +49,7 @@ public class WeaponDrills {
 			float damBonus = computeAndCacheThresholdBonus(data, stats, "wd_dam", DAMAGE_PERCENT, ThresholdBonusType.OP_LOW);
 			
 			info.addPara("+%s weapon damage for combat ships", 0f, hc, hc,
-					"" + damBonus + "%");
+					"" + (int) damBonus + "%");
 			//addOPThresholdInfo(info, data, stats, OP_LOW_THRESHOLD);
 			
 			//info.addSpacer(5f);
