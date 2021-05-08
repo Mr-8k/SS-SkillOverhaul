@@ -48,7 +48,7 @@ public class WeaponDrills {
 			FleetDataAPI data = getFleetData(null);
 			float damBonus = computeAndCacheThresholdBonus(data, stats, "wd_dam", DAMAGE_PERCENT, ThresholdBonusType.OP_LOW);
 			
-			info.addPara("+%s weapon damage for combat ships", 0f, hc, hc,
+			info.addPara("+%f weapon damage for combat ships", 0f, hc, hc,
 					"" + damBonus + "%");
 			//addOPThresholdInfo(info, data, stats, OP_LOW_THRESHOLD);
 			
