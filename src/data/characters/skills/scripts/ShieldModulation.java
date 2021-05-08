@@ -14,7 +14,7 @@ public class ShieldModulation {
 	
 	public static final float SHIELD_HE_REDUCTION = 30f;
 
-	public static final float PHASE_COOLDOWN_REDUCTION = 50f;
+	public static final float PHASE_COOLDOWN_REDUCTION = 0.5f;
 	public static final float PHASE_SPEED_BONUS = 100f;
 	
 
@@ -88,7 +88,7 @@ public class ShieldModulation {
 
 	public static class Level4 implements ShipSkillEffect {
 		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
-			stats.getPhaseCloakCooldownBonus().modifyMult(id, 1f - PHASE_COOLDOWN_REDUCTION / 100f);
+			stats.getPhaseCloakCooldownBonus().modifyMult(id, PHASE_COOLDOWN_REDUCTION );
 		}
 
 		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
@@ -96,7 +96,7 @@ public class ShieldModulation {
 		}
 
 		public String getEffectDescription(float level) {
-			return "-" + (int)(PHASE_COOLDOWN_REDUCTION) + "% phase cloak cooldown";
+			return "-" + (int)(PHASE_COOLDOWN_REDUCTION * 100) + "% phase cloak cooldown";
 		}
 
 		public String getEffectPerLevelDescription() {
