@@ -9,6 +9,6 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 
     @Override
     public void onApplicationLoad() {
-        final boolean hasNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
+        hasNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
     }
 }
