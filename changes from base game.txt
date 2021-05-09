@@ -2,6 +2,7 @@ COMBAT
 -Target analysis normalized to 15% damage to all ships
 -Shield modulation renamed to defensive systems, merged with phase mastery
 -Phase mastery replaced with ordinance expertise, increasing shield damage and armor damage much like target analysis used to
+-Helmsmanship now activates 0-flux at up to 1% flux in addition to the new condition
 
 LEADERSHIP
 -Weapon drills bonus down to 7%, dp limit removed

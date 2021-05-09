@@ -1,5 +1,7 @@
 1.0.2
 -Weapon Drills bonus down to 7% (mostly for rounding reasons)
+-Helmsmanship now activates 0-flux at up to 1% flux in addition to the new condition
+-Nex bonus agent support (for real this time)
 
 1.0.1
 -Fighter uplink gains 10% bonus replacement rate
