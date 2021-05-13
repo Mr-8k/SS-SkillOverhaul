@@ -1,7 +1,6 @@
 {
   ##stuff in vanilla settings
   "playerMaxLevel":40,
-  "officerAIMercsStartingFP":99999, # start adding more "merc" officers at this threshold (STOP CHEATING),
 
 
   ##stuff added by mod

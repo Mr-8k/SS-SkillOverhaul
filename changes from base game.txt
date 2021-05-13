@@ -31,4 +31,3 @@ INDUSTRY
 ADDITIONAL CHANGES
 -Skills can be chosen in any order
 -Max level is now 40, exp requirements have been adjusted (may be too low, need further testing)
--Attempted officer spam fix by editing "officerAIMercsStartingFP" (just so you know this mod edits that value, you can remove it from the mod/data/config/settings json if you so please)
