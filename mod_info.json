@@ -2,8 +2,8 @@
   "id":"ESP_Skill_Overhaul",
   "name":"Skill Overhaul",
   "author":"Entity 8000",
-  "version":"1.0.1",
-  "description":"Shifts the attention away from smaller ships, edits multiple skills, removes skill requirements, changes max level and required xp, attempts to remove officer spam",
+  "version":"1.0.2",
+  "description":"Shifts the attention away from smaller ships, edits multiple skills, removes skill requirements, changes max level and required xp",
   "gameVersion":"0.95a-RC15",
   "jars":["jars/ESP_Skill_Overhaul.jar"],
   "replace":[
