@@ -62,7 +62,7 @@ public class ColonyManagement {
 		}
 		
 		public String getEffectDescription(float level) {
-			return "Able to personally govern " + (int) COLONY_NUM_BONUS + " additional colony";
+			return "Able to personally govern " + (int) COLONY_NUM_BONUS + " additional colonies";
 		}
 		
 		public String getEffectPerLevelDescription() {
