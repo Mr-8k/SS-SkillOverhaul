@@ -27,6 +27,7 @@ INDUSTRY
 -Makeshift equipment maint reduction to 25% from the lower of 50% or 100 units
 -Field repairs dp limit removed
 -Derelict contingent: effects removed, replaced with reduced dmod effect and reduced maint per dmod
+-Colony management now grants 2 personally governable colonies as it used to
 
 ADDITIONAL CHANGES
 -Skills can be chosen in any order

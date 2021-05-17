@@ -29,7 +29,8 @@
     "data/characters/skills/derelict_contingent.skill",
     "data/characters/skills/wolfpack_tactics.skill",
     "data/characters/skills/special_modifications.skill",
-    "data/characters/skills/helmsmanship.skill"
+    "data/characters/skills/helmsmanship.skill",
+    "data/characters/skills/colony_management.skill"
   ],
   "modPlugin":"data.scripts.plugins.SkillOverhaulPlugin"
 }

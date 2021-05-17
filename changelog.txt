@@ -1,3 +1,6 @@
+1.0.3
+-Colony management now grants 2 personally governable colonies as it used to
+
 1.0.2
 -Weapon Drills bonus down to 7% (mostly for rounding reasons)
 -Helmsmanship now activates 0-flux at up to 1% flux in addition to the new condition
