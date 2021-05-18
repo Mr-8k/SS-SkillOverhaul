@@ -1,6 +1,6 @@
 1.0.3
 -Colony management now grants 2 personally governable colonies as it used to
--Fix for skins with dmods not being restored (ported from vanilla)
+-D status now removed from hull when last d-mod is removed with field repairs (ported from vanilla)
 
 1.0.2
 -Weapon Drills bonus down to 7% (mostly for rounding reasons)
