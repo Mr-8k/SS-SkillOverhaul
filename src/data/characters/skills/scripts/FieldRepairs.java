@@ -129,9 +129,9 @@ public class FieldRepairs {
 			}
 			float damBonus = computeAndCacheThresholdBonus(data, stats, "fr_repRate", REPAIR_RATE_BONUS, ThresholdBonusType.OP_ALL_LOW);
 
-			info.addPara("+%s ship repair rate outside of combat (maximum: %s)", 0f, hc, hc,
-					"" + (int) damBonus + "%",
-					"" + (int) REPAIR_RATE_BONUS + "%");
+			info.addPara("+%s ship repair rate outside of combat", 0f, hc, hc,
+					"" + (int) damBonus + "%");
+					//"" + (int) REPAIR_RATE_BONUS + "%");
 			//addOPThresholdInfo(info, data, stats, OP_LOW_THRESHOLD);
 			//info.addSpacer(5f);
 		}
@@ -169,10 +169,10 @@ public class FieldRepairs {
 			FleetDataAPI data = getFleetData(null);
 			float instaRep = computeAndCacheThresholdBonus(data, stats, "fr_instaRep", INSTA_REPAIR_PERCENT, ThresholdBonusType.OP_ALL_LOW);
 
-			info.addPara("%s of hull and armor damage taken repaired after combat ends, at no cost (maximum: %s)", 0f, hc, hc,
-					"" + (int) instaRep + "%",
-					"" + (int) INSTA_REPAIR_PERCENT + "%");
-			addOPThresholdAll(info, data, stats, OP_ALL_LOW_THRESHOLD);
+			info.addPara("%s of hull and armor damage taken repaired after combat ends, at no cost", 0f, hc, hc,
+					"" + (int) instaRep + "%");
+					//"" + (int) INSTA_REPAIR_PERCENT + "%");
+			//addOPThresholdAll(info, data, stats, OP_ALL_LOW_THRESHOLD);
 
 			info.addSpacer(5f);
 		}
