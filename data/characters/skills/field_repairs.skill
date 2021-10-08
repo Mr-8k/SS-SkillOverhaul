@@ -2,6 +2,7 @@
 	"id":"field_repairs",
 	"governingAptitude":"industry",
 	"compressHullmods":false,
+	"elite":true,
 	"scope":"FLEET",
 	"effectGroups":[
 		{
@@ -12,6 +13,14 @@
 				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.FieldRepairs$Level2"},
 				{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairs$Level3"},
 				{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairs$Level4"},
+			]
+		},
+		{
+			"name":"Elite",
+			"requiredSkillLevel":2,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairs$Level5"},
 			]
 		},
 	],

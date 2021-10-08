@@ -25,7 +25,7 @@ TECHNOLOGY
 INDUSTRY
 -Containment procedures crew loss bonus down to 50% from 75%, fuel consumption reduction to flat 25% from the lower of 25 or 50%, dp limit removed
 -Makeshift equipment maint reduction to 25% from the lower of 50% or 100 units
--Field repairs dp limit removed
+-Field repairs dp limit removed, now has an elite level granting 50% reduced restoration costs, D-mod repair time reduced to 1 month (mirroring future vanilla change)
 -Derelict contingent: effects removed, replaced with reduced dmod effect and reduced maint per dmod
 -Colony management now grants 2 personally governable colonies as it used to
 

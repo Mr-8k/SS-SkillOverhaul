@@ -1,3 +1,7 @@
+1.0.4
+-Field repairs now have an elite level granting 50% reduced restoration costs
+-D-mod repair time reduced to 1 month (mirroring future vanilla change)
+
 1.0.3
 -Colony management now grants 2 personally governable colonies as it used to
 -D status now removed from hull when last d-mod is removed with field repairs (vanilla change)

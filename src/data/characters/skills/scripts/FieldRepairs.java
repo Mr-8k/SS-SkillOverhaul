@@ -1,6 +1,7 @@
 package data.characters.skills.scripts;
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.SettingsAPI;
 import com.fs.starfarer.api.campaign.FleetDataAPI;
 import com.fs.starfarer.api.characters.CharacterStatsSkillEffect;
 import com.fs.starfarer.api.characters.FleetStatsSkillEffect;
@@ -27,6 +28,11 @@ public class FieldRepairs {
 	public static final float REPAIR_RATE_BONUS = Global.getSettings().getFloat("REPAIR_RATE_BONUS");
 	public static final float INSTA_REPAIR_PERCENT = Global.getSettings().getFloat("INSTA_REPAIR_PERCENT");
 	public static final float DMOD_REDUCTION = Global.getSettings().getFloat("DMOD_REDUCTION");
+
+	public static final float reduction_amount = 0.5f;
+	public static final float baseRestoreCostMultInit = Global.getSettings().getFloat("baseRestoreCostMult");
+	public static final float baseRestoreCostMultReduced = Global.getSettings().getFloat("baseRestoreCostMult") * reduction_amount;
+
 
 //	public static class Level1 implements FleetStatsSkillEffect {
 //		public void apply(MutableFleetStatsAPI stats, String id, float level) {
@@ -112,7 +118,6 @@ public class FieldRepairs {
 			}
 			float repBonus = computeAndCacheThresholdBonus(data, stats, "fr_repRate", REPAIR_RATE_BONUS, ThresholdBonusType.OP_ALL_LOW);
 			stats.getRepairRateMult().modifyPercent(id, repBonus);
-			//}
 		}
 
 		public void unapply(MutableCharacterStatsAPI stats, String id) {
@@ -247,6 +252,28 @@ public class FieldRepairs {
 				return "Chance to remove a d-mod from a randomly selected ship in your fleet every " +
 						FieldRepairsScript.MONTHS_PER_DMOD_REMOVAL + " months";
 			}
+		}
+
+		public String getEffectPerLevelDescription() {
+			return null;
+		}
+
+		public ScopeDescription getScopeDescription() {
+			return ScopeDescription.FLEET;
+		}
+	}
+
+	public static class Level5 implements FleetStatsSkillEffect {
+		public void apply(MutableFleetStatsAPI stats, String id, float level) {
+			Global.getSettings().setFloat("baseRestoreCostMult", baseRestoreCostMultReduced);
+		}
+
+		public void unapply(MutableFleetStatsAPI stats, String id) {
+			Global.getSettings().setFloat("baseRestoreCostMult", baseRestoreCostMultInit);
+		}
+
+		public String getEffectDescription(float level) {
+			return "Ship restoration costs are reduced by " +  (int)(reduction_amount*100) + "%";
 		}
 
 		public String getEffectPerLevelDescription() {
