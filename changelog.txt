@@ -1,6 +1,8 @@
 1.0.4
 -Field repairs now have an elite level granting 50% reduced restoration costs
 -D-mod repair time reduced to 1 month (mirroring future vanilla change)
+-Impact Mitigation description clarified, now offers old maximum armor reduction effect as an elite effect (current elite moved to standard part)
+-Point Defense bonus damage to fighters reverted to 50%
 
 1.0.3
 -Colony management now grants 2 personally governable colonies as it used to

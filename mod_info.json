@@ -30,7 +30,8 @@
     "data/characters/skills/wolfpack_tactics.skill",
     "data/characters/skills/special_modifications.skill",
     "data/characters/skills/helmsmanship.skill",
-    "data/characters/skills/colony_management.skill"
+    "data/characters/skills/colony_management.skill",
+    "data/characters/skills/impact_mitigation.skill"
   ],
   "modPlugin":"data.scripts.plugins.SkillOverhaulPlugin"
 }
