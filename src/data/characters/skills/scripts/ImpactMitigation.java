@@ -26,7 +26,7 @@ public class ImpactMitigation {
 		}	
 		
 		public String getEffectDescription(float level) {
-			return "+" + (int)(ARMOR_BONUS) + " armor for damage reduction calculation only" + "\n" + "     - for residual armor, acts as a minimum value if armor is less than 1000";
+			return "+" + (int)(ARMOR_BONUS) + " armor for damage reduction calculation only" + "\n" + "     - for residual armor this acts as a minimum value, it is not summed with it";
 			//return "+" + (int)(ARMOR_BONUS) + " maximum armor";
 		}
 		

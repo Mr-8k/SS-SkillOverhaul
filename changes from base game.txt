@@ -4,7 +4,7 @@ COMBAT
 -Phase mastery replaced with ordinance expertise, increasing shield damage and armor damage much like target analysis used to
 -Helmsmanship now activates 0-flux at up to 1% flux in addition to the new condition
 -Impact Mitigation description clarified, now offers old maximum armor reduction effect as an elite effect (current elite moved to standard part)
--Point Defense bonus damage to fighters reverted to 50%
+-Point Defense bonus damage to fighters nerfed back to 50% (from 100%)
 
 LEADERSHIP
 -Weapon drills bonus down to 7%, dp limit removed
