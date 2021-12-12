@@ -10,7 +10,7 @@ import com.fs.starfarer.api.util.Misc;
 import exerelin.utilities.StringHelper;
 import data.scripts.plugins.SkillOverhaulPlugin;
 
-public class OfficerManagement {
+public class OfficerManagementSkillOverhaul {
 	
 	public static float NUM_OFFICERS_BONUS = 2;
 	public static float NUM_OFFICERS_BONUS2 = 2;

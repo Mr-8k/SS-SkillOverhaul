@@ -5,7 +5,7 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
-public class GunneryImplants {
+public class GunneryImplantsSkillOverhaul {
 	
 	public static float RECOIL_BONUS = 50f;
 	public static float TARGET_LEADING_BONUS = 100f;

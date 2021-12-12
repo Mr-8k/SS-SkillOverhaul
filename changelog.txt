@@ -1,3 +1,6 @@
+1.0.5
+-Complete remake of the mod due to 0.95.1a, best check the changes from base to see what is what now
+
 1.0.4
 -Field repairs now have an elite level granting 50% reduced restoration costs
 -D-mod repair time reduced to 1 month (mirroring future vanilla change)
@@ -18,7 +21,7 @@
 -Fighter uplink gains 10% bonus replacement rate
 -Carrier group added 15% fighter damage resistance
 -Nex bonus agent support
--Weapon Drills bonus up to 7.5
+-Weapon Drills bonus up to 75
 -Special Modifications lost extra built in, regained 10% OP bonus
 -Wolfpack tactics grants halved bonus to destroyers
 -Version checker integration

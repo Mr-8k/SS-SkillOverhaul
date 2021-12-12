@@ -1,36 +1,70 @@
 COMBAT
--Target analysis normalized to 15% damage to all ships
--Shield modulation renamed to defensive systems, merged with phase mastery
--Phase mastery replaced with ordinance expertise, increasing shield damage and armor damage much like target analysis used to
--Helmsmanship now activates 0-flux at up to 1% flux in addition to the new condition
--Impact Mitigation description clarified, now offers old maximum armor reduction effect as an elite effect (current elite moved to standard part)
--Point Defense bonus damage to fighters nerfed back to 50% (from 100%)
+
+Helmsmanship
+- 0-flux bonus also active at up to 1% flux
+
+Target Analysis
+- Now a flat 15% damage bonus to all ships (from scaled to hull size)
 
 LEADERSHIP
--Weapon drills bonus down to 7%, dp limit removed
--Auxiliary support bonus down to 300%, dp limit removed
--Coordinated maneuvers nav bonus affected by all ships depending on size (as it used to) (as opposed to only officered midgets)
--Crew training dp limit removed
--Carrier group replacement rate bonus reduced from 50% to 25%, bay limit removed, added 15% fighter damage resistance
--Officer management gains elite level for additional +2 officers
--Wolfpack tactics grants halved bonus to destroyers
+
+Tactical Drills
+- Removed DP cap
+
+Coordinated Maneuvers
+- Bonus changed to 1/2/3/4 from 6/3/1/1
+
+Crew Training
+- DpP cap removed
+
+Carrier Group
+- DP cap removed
+- Replacement rate bonus halved
+- 15% fighter damage resist added, does not scale with officer
+
+Fighter Uplink
+- 10% replacement rate bonus added, scales with officer
+
+Officer Management
+- Elite tier added for additional 2 officers
+
+Best of the Best
+- Extra S-mod replaced with 10% OP bonus
+
 
 TECHNOLOGY
--Gunnery implants no longer offer ECM rating under any circumstances
--Electronic warfare ECM bonus affected by ships depending on size (as it used to)
--Fighter uplink bay limit removed, added 10% replacement rate bonus
--Flux regulation bonuses down to +10%/+10% from +20%/+20%, dp limit removed, gains elite level allowing flagship to vent faster
--Phase Corps bonus down to -10%/+60s from -30%/+180s, absurdly small dp limit removed
--Automated ships dp limit removed
--Special Modifications lost extra built in, regained 10% OP bonus
+
+Gunnery Implants
+- Removed Elite effect entirely
+
+Electronic Warfare
+- Bonus changed from 1/1/1/1 to 1/2/3/4
+
+Flux Regulation
+- Removed DP cap
+
+Phase Coil Tuning
+- Removed DP cap
+- Bonuses (excluding sensors)
+
+Neural Link
+- Removed DP cap
+
+Automated Ships
+- Removed DP cap
+
 
 INDUSTRY
--Containment procedures crew loss bonus down to 50% from 75%, fuel consumption reduction to flat 25% from the lower of 25 or 50%, dp limit removed
--Makeshift equipment maint reduction to 25% from the lower of 50% or 100 units
--Field repairs dp limit removed, now has an elite level granting 50% reduced restoration costs, D-mod repair time reduced to 1 month (mirroring future vanilla change)
--Derelict contingent: effects removed, replaced with reduced dmod effect and reduced maint per dmod
--Colony management now grants 2 personally governable colonies as it used to
+
+Field Repairs
+- Removed DP cap
+
+Containment Procedures
+- Removed DP cap
+- Fuel use reduction set to 25% flat from 50% / 25 units flat
+
+Makeshift Equipment
+- Removed DP cap
+- Fuel use reduction set to 25% flat from 50% / 100 units flat
 
 ADDITIONAL CHANGES
--Skills can be chosen in any order
--Max level is now 40, exp requirements have been adjusted (may be too low, need further testing)

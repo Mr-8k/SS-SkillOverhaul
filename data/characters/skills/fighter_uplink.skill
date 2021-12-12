@@ -1,16 +1,19 @@
 {
 	"id":"fighter_uplink",
-	"governingAptitude":"technology",
+	"governingAptitude":"leadership",
 	"compressHullmods":false,
-	"scope":"ALL_FIGHTERS",
+	#"scope":"ALL_FIGHTERS",
+	"scope":CUSTOM,
+	"scopeStr":"all fighters",
+	"scope2":CUSTOM,
+	"scopeStr2":"grants increased effect to ships with officers, including flagship",	
 	"effectGroups":[
 		{
 			"requiredSkillLevel":1,
 			"effectBasedOnLevel":false,
 			"effects":[
-				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.FighterUplink$Level1"},
-				{"type":"ALL_FIGHTERS_IN_FLEET", "script":"data.characters.skills.scripts.FighterUplink$Level2"},
-				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.FighterUplink$Level3"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.FighterUplinkSkillOverhaul$Level1"},
+				{"type":"ALL_FIGHTERS_IN_FLEET", "script":"data.characters.skills.scripts.FighterUplinkSkillOverhaul$Level2"},
 				{"type":"HULLMOD_UNLOCK", "hullmods":{"recovery_shuttles":1}},
 			]
 		},

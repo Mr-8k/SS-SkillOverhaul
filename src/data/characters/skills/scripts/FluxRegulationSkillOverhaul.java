@@ -1,7 +1,9 @@
 package data.characters.skills.scripts;
 
-import com.fs.starfarer.api.Global;
+import java.awt.Color;
+
 import com.fs.starfarer.api.campaign.FleetDataAPI;
+import com.fs.starfarer.api.characters.CharacterStatsSkillEffect;
 import com.fs.starfarer.api.characters.FleetTotalItem;
 import com.fs.starfarer.api.characters.FleetTotalSource;
 import com.fs.starfarer.api.characters.MutableCharacterStatsAPI;
@@ -9,16 +11,19 @@ import com.fs.starfarer.api.characters.ShipSkillEffect;
 import com.fs.starfarer.api.characters.SkillSpecAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
-import data.scripts.SkillValueInformation;
+import com.fs.starfarer.api.util.Misc;
 
-public class FluxRegulation {
+public class FluxRegulationSkillOverhaul {
+
+	public static int VENTS_BONUS = 5;
+	public static int CAPACITORS_BONUS = 5;
 	
-	public static float DISSIPATION_PERCENT = Global.getSettings().getFloat("DISSIPATION_PERCENT");
-	public static float CAPACITY_PERCENT = Global.getSettings().getFloat("CAPACITY_PERCENT");
-	public static final float VENT_RATE_BONUS = 25f;
+	public static float DISSIPATION_PERCENT = 10;
+	public static float CAPACITY_PERCENT = 10;
 	
-	public static class Level1 extends SkillValueInformation implements ShipSkillEffect, FleetTotalSource {
+	public static class Level1 extends BaseSkillEffectDescription implements ShipSkillEffect, FleetTotalSource {
 		
 		public FleetTotalItem getFleetTotalItem() {
 			return getCombatOPTotal();
@@ -53,18 +58,26 @@ public class FluxRegulation {
 											TooltipMakerAPI info, float width) {
 			init(stats, skill);
 			
+			//info.addSpacer(5f);
+			
 			FleetDataAPI data = getFleetData(null);
 			float disBonus = computeAndCacheThresholdBonus(data, stats, "fr_dis", DISSIPATION_PERCENT, ThresholdBonusType.OP);
 			float capBonus = computeAndCacheThresholdBonus(data, stats, "fr_cap", CAPACITY_PERCENT, ThresholdBonusType.OP);
+
+			float opad = 10f;
+			Color c = Misc.getBasePlayerColor();
+			info.addPara("Affects: %s", opad + 5f, Misc.getGrayColor(), c, "all combat ships, including carriers and militarized civilian ships");
 			
-			info.addPara("+%s flux dissipation for combat ships", 0f, hc, hc,
-					"" + (int) disBonus + "%");
+			info.addPara("+%s flux dissipation for combat ship", opad, hc, hc,
+					//"" + (int) disBonus + "%",
+					"" + (int) DISSIPATION_PERCENT + "%");
 			
 //			addFighterBayThresholdInfo(info, data);
 //			info.addSpacer(5f);
 			
 			info.addPara("+%s flux capacity for combat ships", 0f, hc, hc,
-					"" + (int) capBonus + "%");
+					//"" + (int) capBonus + "%",
+					"" + (int) CAPACITY_PERCENT + "%");
 			//addOPThresholdInfo(info, data, stats);
 			
 			//info.addSpacer(5f);
@@ -74,18 +87,18 @@ public class FluxRegulation {
 			return ScopeDescription.ALL_SHIPS;
 		}
 	}
-
-	public static class Level2 implements ShipSkillEffect {
-		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
-			stats.getVentRateMult().modifyFlat(id, VENT_RATE_BONUS * 0.01f);
+	
+	public static class Level2 implements CharacterStatsSkillEffect {
+		public void apply(MutableCharacterStatsAPI stats, String id, float level) {
+			stats.getMaxCapacitorsBonus().modifyFlat(id, CAPACITORS_BONUS);
 		}
 
-		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
-			stats.getVentRateMult().unmodify(id);
+		public void unapply(MutableCharacterStatsAPI stats, String id) {
+			stats.getMaxCapacitorsBonus().unmodify(id);
 		}
 
 		public String getEffectDescription(float level) {
-			return "Affects: piloted ship" + "\n" + "+" + (int) VENT_RATE_BONUS + "% flux dissipation rate while venting";
+			return "+" + (int) CAPACITORS_BONUS + " maximum flux capacitors";
 		}
 
 		public String getEffectPerLevelDescription() {
@@ -93,11 +106,33 @@ public class FluxRegulation {
 		}
 
 		public ScopeDescription getScopeDescription() {
-			return ScopeDescription.PILOTED_SHIP;
+			return ScopeDescription.ALL_SHIPS;
 		}
 	}
-	
 
+	public static class Level3 implements CharacterStatsSkillEffect {
+		public void apply(MutableCharacterStatsAPI stats, String id, float level) {
+			//stats.getShipOrdnancePointBonus().modifyPercent(id, 50f);
+			stats.getMaxVentsBonus().modifyFlat(id, VENTS_BONUS);
+		}
+
+		public void unapply(MutableCharacterStatsAPI stats, String id) {
+			//stats.getShipOrdnancePointBonus().unmodifyPercent(id);
+			stats.getMaxVentsBonus().unmodify(id);
+		}
+
+		public String getEffectDescription(float level) {
+			return "+" + (int) VENTS_BONUS + " maximum flux vents";
+		}
+
+		public String getEffectPerLevelDescription() {
+			return null;
+		}
+
+		public ScopeDescription getScopeDescription() {
+			return ScopeDescription.ALL_SHIPS;
+		}
+	}
 
 }
 

@@ -16,13 +16,10 @@ import com.fs.starfarer.api.impl.campaign.skills.CoordinatedManeuversScript;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
-public class CoordinatedManeuvers {
+public class CoordinatedManeuversSkillOverhaul {
 	
 	public static final float CP_BONUS = 3f;
-	
-	public static float NAV_FRIGATES = 6f;
-	public static float NAV_DESTROYERS = 3f;
-	
+
 	public static float CP_REGEN_FRIGATES = 50f;
 	public static float CP_REGEN_DESTROYERS = 25f;
 

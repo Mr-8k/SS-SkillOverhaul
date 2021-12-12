@@ -8,11 +8,11 @@
 			"requiredSkillLevel":1,
 			"effectBasedOnLevel":false,
 			"effects":[
-				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.ContainmentProcedures$Level1"},
-				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.ContainmentProcedures$Level4"},
-				{"type":"FLEET", "script":"data.characters.skills.scripts.ContainmentProcedures$Level3"},
-				{"type":"FLEET", "script":"data.characters.skills.scripts.ContainmentProcedures$Level2"},
-				#{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.ContainmentProcedures$Level5"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.ContainmentProceduresSkillOverhaul$Level1"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.ContainmentProceduresSkillOverhaul$Level4"},
+				{"type":"FLEET", "script":"data.characters.skills.scripts.ContainmentProceduresSkillOverhaul$Level3"},
+				{"type":"FLEET", "script":"data.characters.skills.scripts.ContainmentProceduresSkillOverhaul$Level2"},
+				#{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.ContainmentProceduresSkillOverhaul$Level5"},
 				#{"type":"HULLMOD_UNLOCK", "hullmods":{"solar_shielding":1}},
 			]
 		},

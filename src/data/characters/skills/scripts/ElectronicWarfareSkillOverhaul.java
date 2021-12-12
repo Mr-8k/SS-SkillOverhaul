@@ -11,13 +11,13 @@ import com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription;
 import com.fs.starfarer.api.impl.campaign.skills.ElectronicWarfareScript;
 import com.fs.starfarer.api.util.Misc;
 
-public class ElectronicWarfare {
+public class ElectronicWarfareSkillOverhaul {
 	
 //	public static final float LEVEL_1_BONUS = 0f;
 //	public static final float LEVEL_2_BONUS = 5f;
 //	public static final float LEVEL_3_BONUS = 5f;
 	
-	public static float PER_SHIP_BONUS = 2f;
+//	public static float PER_SHIP_BONUS = 2f;
 
 
 	public static float getBase(HullSize hullSize) {

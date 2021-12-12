@@ -2,25 +2,18 @@
 	"id":"field_repairs",
 	"governingAptitude":"industry",
 	"compressHullmods":false,
-	"elite":true,
 	"scope":"FLEET",
 	"effectGroups":[
 		{
 			"requiredSkillLevel":1,
 			"effectBasedOnLevel":false,
 			"effects":[
-				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.FieldRepairs$Level1"},
-				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.FieldRepairs$Level2"},
-				{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairs$Level3"},
-				{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairs$Level4"},
-			]
-		},
-		{
-			"name":"Elite",
-			"requiredSkillLevel":2,
-			"effectBasedOnLevel":false,
-			"effects":[
-				{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairs$Level5"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.FieldRepairsSkillOverhaul$Level1"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.FieldRepairsSkillOverhaul$Level2"},
+				#{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairsSkillOverhaul$Level3"},
+				#{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairsSkillOverhaul$Level4"},
+				{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairsSkillOverhaul$Level5A"},
+				{"type":"FLEET", "script":"data.characters.skills.scripts.FieldRepairsSkillOverhaul$Level5B"},
 			]
 		},
 	],

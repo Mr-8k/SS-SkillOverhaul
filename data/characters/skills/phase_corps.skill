@@ -8,11 +8,18 @@
 	#"scopeStr":"all phase ships with officers, including flagship",
 	"effectGroups":[
 		{
+			"requiredSkillLevel":0,
+			"effects":[
+				{"type":"DESCRIPTION", "script":"data.characters.skills.scripts.PhaseCorpsSkillOverhaul$Level0"},
+			]
+		},
+		{
 			"requiredSkillLevel":1,
 			"effectBasedOnLevel":false,
 			"effects":[
-				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.PhaseCorps$Level3"},
-				{"type":"FLEET", "script":"data.characters.skills.scripts.PhaseCorps$Level4"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.PhaseCorpsSkillOverhaul$Level3"},
+				#{"type":"FLEET", "script":"data.characters.skills.scripts.PhaseCorpsSkillOverhaul$Level4"},
+				{"type":"HULLMOD_UNLOCK", "hullmods":{"adaptive_coils":1, "phase_anchor":1}},
 			]
 		},
 	],

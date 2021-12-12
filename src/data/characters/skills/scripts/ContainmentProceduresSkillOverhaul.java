@@ -12,36 +12,36 @@ import com.fs.starfarer.api.characters.MutableCharacterStatsAPI;
 import com.fs.starfarer.api.characters.ShipSkillEffect;
 import com.fs.starfarer.api.characters.SkillSpecAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.StatBonus;
 import com.fs.starfarer.api.combat.MutableStat.StatMod;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.combat.StatBonus;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.MutableFleetStatsAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
+import com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
-import data.scripts.SkillValueInformation;
 
-public class ContainmentProcedures {
+public class ContainmentProceduresSkillOverhaul {
 	
 //	public static final float CR_MALFUNCTION_RANGE_MULT = 0.5f;
 	//public static final float DMOD_EFFECT_MULT = 0.5f;
 	
-	public static float FUEL_PROD_BONUS = Global.getSettings().getFloat("FUEL_PROD_BONUS");
-	public static float CREW_LOSS_REDUCTION = Global.getSettings().getFloat("CREW_LOSS_REDUCTION");
-	public static float FUEL_SALVAGE_BONUS = Global.getSettings().getFloat("FUEL_SALVAGE_BONUS");
-	public static float FUEL_USE_REDUCTION_MAX_PERCENT = Global.getSettings().getFloat("FUEL_USE_REDUCTION_MAX_PERCENT");
-	public static float FUEL_USE_REDUCTION_MAX_FUEL = Global.getSettings().getFloat("FUEL_USE_REDUCTION_MAX_FUEL");
+	public static float FUEL_PROD_BONUS = 1f;
+	public static float CREW_LOSS_REDUCTION = 50f;
+	public static float FUEL_SALVAGE_BONUS = 25f;
+	public static float FUEL_USE_REDUCTION_MAX_PERCENT = 50;
+	public static float FUEL_USE_REDUCTION_MAX_FUEL = 25;
 	
 
-	public static class Level1 extends SkillValueInformation implements ShipSkillEffect, FleetTotalSource {
+	public static class Level1 extends BaseSkillEffectDescription implements ShipSkillEffect, FleetTotalSource {
 		
 		public FleetTotalItem getFleetTotalItem() {
 			return getOPTotal();
 		}
 		
 		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
-			float lossPercent = computeAndCacheThresholdBonus(stats, "sp_crewloss", CREW_LOSS_REDUCTION, ThresholdBonusType.OP_ALL_LOW);
+			float lossPercent = computeAndCacheThresholdBonus(stats, "sp_crewloss", CREW_LOSS_REDUCTION, ThresholdBonusType.OP_ALL);
 			stats.getCrewLossMult().modifyMult(id, 1f - (lossPercent * 0.01f));
 		}
 			
@@ -59,11 +59,12 @@ public class ContainmentProcedures {
 			
 			//info.addSpacer(5f);
 			FleetDataAPI data = getFleetData(null);
-			float damBonus = computeAndCacheThresholdBonus(data, stats, "sp_crewloss", CREW_LOSS_REDUCTION, ThresholdBonusType.OP_ALL_LOW);
+			float damBonus = computeAndCacheThresholdBonus(data, stats, "sp_crewloss", CREW_LOSS_REDUCTION, ThresholdBonusType.OP_ALL);
 			
 			info.addPara("-%s crew lost due to hull damage in combat", 0f, hc, hc,
-					"" + (int) damBonus + "%");
-			//addOPThresholdAll(info, data, stats, OP_ALL_LOW_THRESHOLD);
+					//"" + (int) damBonus + "%",
+					"" + (int) CREW_LOSS_REDUCTION + "%");
+			//addOPThresholdAll(info, data, stats, OP_ALL_THRESHOLD);
 			
 		}
 		
@@ -119,7 +120,7 @@ public class ContainmentProcedures {
 	}
 	
 	public static String FUEL_EFFECT_ID = "sp_fuel_use_mod";
-	public static class Level4 extends SkillValueInformation implements ShipSkillEffect {
+	public static class Level4 extends BaseSkillEffectDescription implements ShipSkillEffect {
 		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
 			id = FUEL_EFFECT_ID;
 			float useMult = getFuelUseMult(id, getFleetData(stats));
@@ -156,7 +157,7 @@ public class ContainmentProcedures {
 		protected float getFuelUseMult(String id, FleetDataAPI data) {
 			if (data == null) return 0f;
 			
-			String key = "nav1";
+			String key = "conproc1";
 			Float bonus = (Float) data.getCacheClearedOnSync().get(key);
 			if (bonus != null) return bonus;
 			
@@ -182,7 +183,9 @@ public class ContainmentProcedures {
 			info.addSpacer(5f);
 			info.addPara("Reduces fuel consumption by %s",
 					0f, hc, hc,
-					"" + (int) FUEL_USE_REDUCTION_MAX_PERCENT + "%");
+					"" + (int) FUEL_USE_REDUCTION_MAX_PERCENT + "%"
+					//"" + (int) FUEL_USE_REDUCTION_MAX_FUEL
+					);
 			
 			if (isInCampaign()) {
 				FleetDataAPI data = Global.getSector().getPlayerFleet().getFleetData();
@@ -195,9 +198,10 @@ public class ContainmentProcedures {
 				boolean has = stats.getSkillLevel(skill.getId()) > 0;
 				String is = "is";
 				if (!has) is = "would be";
-				info.addPara(indent + "Your fleet has a base fuel consumption of %s, which " + is + " reduced by %s units",
+				info.addPara(indent + "Your fleet has a base fuel consumption of %s, which " + is + " reduced by %s, or %s units",
 						0f, tc, hc, 
-						"" + Misc.getRoundedValueMaxOneAfterDecimal(fuelUse),
+						"" + Misc.getRoundedValueMaxOneAfterDecimal(fuelUse), 
+						"" + (int)(Math.round((1f - useMult) * 100f)) + "%",
 						"" + Misc.getRoundedValueMaxOneAfterDecimal(reduction) 
 						);
 				info.addSpacer(5f);
@@ -215,7 +219,7 @@ public class ContainmentProcedures {
 		}
 	}
 	
-	public static class Level5 extends SkillValueInformation implements CharacterStatsSkillEffect {
+	public static class Level5 extends BaseSkillEffectDescription implements CharacterStatsSkillEffect {
 
 		public void apply(MutableCharacterStatsAPI stats, String id, float level) {
 			stats.getDynamic().getMod(Stats.FUEL_SUPPLY_BONUS_MOD).modifyFlat(id, FUEL_PROD_BONUS);

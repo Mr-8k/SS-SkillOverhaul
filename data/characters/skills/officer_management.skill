@@ -9,16 +9,16 @@
 		{
 			"requiredSkillLevel":0,
 			"effects":[
-				{"type":"DESCRIPTION", "script":"data.characters.skills.scripts.OfficerManagement$Level0"},
+				{"type":"DESCRIPTION", "script":"data.characters.skills.scripts.OfficerManagementSkillOverhaul$Level0"},
 			]
 		},
 		{
 			"requiredSkillLevel":1,
 			"effectBasedOnLevel":false,
 			"effects":[
-				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagement$Level1"},
-				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagement$Level1B"},
-				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagement$AgentBonus"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagementSkillOverhaul$Level1"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagementSkillOverhaul$Level1B"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagementSkillOverhaul$AgentBonus"},
 			]
 		},
 		{
@@ -26,7 +26,7 @@
 			"requiredSkillLevel":2,
 			"effectBasedOnLevel":false,
 			"effects":[
-				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagement$Level2"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.OfficerManagementSkillOverhaul$Level2"},
 			]
 		},
 	],

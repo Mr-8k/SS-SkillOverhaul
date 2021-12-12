@@ -1,6 +1,5 @@
 package data.characters.skills.scripts;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.FleetDataAPI;
 import com.fs.starfarer.api.characters.FleetTotalItem;
 import com.fs.starfarer.api.characters.FleetTotalSource;
@@ -9,15 +8,15 @@ import com.fs.starfarer.api.characters.ShipSkillEffect;
 import com.fs.starfarer.api.characters.SkillSpecAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
-import data.scripts.SkillValueInformation;
 
-public class CrewTraining {
+public class CrewTrainingSkillOverhaul {
 	
-	public static float PEAK_SECONDS = Global.getSettings().getFloat("PEAK_SECONDS");
-	public static float CR_PERCENT = Global.getSettings().getFloat("CR_PERCENT");
+	public static float PEAK_SECONDS = 30f;
+	public static float CR_PERCENT = 15f;
 	
-	public static class Level1 extends SkillValueInformation implements ShipSkillEffect, FleetTotalSource {
+	public static class Level1 extends BaseSkillEffectDescription implements ShipSkillEffect, FleetTotalSource {
 		
 		public FleetTotalItem getFleetTotalItem() {
 			return getCombatOPTotal();
@@ -26,7 +25,7 @@ public class CrewTraining {
 		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
 			if (!isCivilian(stats)) {
 				float crBonus = computeAndCacheThresholdBonus(stats, "ct_cr", CR_PERCENT, ThresholdBonusType.OP);
-				stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.01f, "Crew training skill");
+				stats.getMaxCombatReadiness().modifyFlat(id, crBonus * 0.01f, "Crew Training skill");
 			}
 		}
 		
@@ -46,11 +45,12 @@ public class CrewTraining {
 			float crBonus = computeAndCacheThresholdBonus(data, stats, "ct_cr", CR_PERCENT, ThresholdBonusType.OP);
 			
 			info.addPara("+%s maximum combat readiness for combat ships", 0f, hc, hc,
-					"" + (int) crBonus + "%");
+					//"" + (int) crBonus + "%",
+					"" + (int) CR_PERCENT + "%");
 			//addOPThresholdInfo(info, data, stats, OP_THRESHOLD);
 		}
 	}
-	public static class Level2 extends SkillValueInformation implements ShipSkillEffect, FleetTotalSource {
+	public static class Level2 extends BaseSkillEffectDescription implements ShipSkillEffect, FleetTotalSource {
 		
 		public FleetTotalItem getFleetTotalItem() {
 			return getCombatOPTotal();
@@ -78,9 +78,10 @@ public class CrewTraining {
 			FleetDataAPI data = getFleetData(null);
 			float peakTimeBonus = computeAndCacheThresholdBonus(data, stats, "ct_peak", PEAK_SECONDS, ThresholdBonusType.OP);
 			
-			info.addPara("+%s seconds peak operating time for combat ships", 0f, hc, hc,
-					"" + (int) peakTimeBonus);
-			//addOPThresholdInfo(info, data, stats, OP_THRESHOLD);
+			info.addPara("+%s seconds peak operating time for combat ships (maximum: %s)", 0f, hc, hc,
+					"" + (int) peakTimeBonus,
+					"" + (int) PEAK_SECONDS);
+			addOPThresholdInfo(info, data, stats, OP_THRESHOLD);
 		}
 	}
 	

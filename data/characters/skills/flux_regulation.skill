@@ -2,24 +2,18 @@
 	"id":"flux_regulation",
 	"governingAptitude":"technology",
 	"compressHullmods":false,
-	"elite":true,
-	"scope":"CUSTOM",
-	"scopeStr":"all combat ships, including carriers and militarized civilian ships and piloted ship",
+	#"scope":"ALL_COMBAT_SHIPS",
+	"scope":CUSTOM,
+	"scopeStr":"ship loadouts",
 	"effectGroups":[
 		{
 			"requiredSkillLevel":1,
 			"effectBasedOnLevel":false,
 			"effects":[
-				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.FluxRegulation$Level1"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.FluxRegulationSkillOverhaul$Level2"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.FluxRegulationSkillOverhaul$Level3"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.FluxRegulationSkillOverhaul$Level1"},
 				{"type":"HULLMOD_UNLOCK", "hullmods":{"fluxbreakers":1}},
-			]
-		},
-		{
-			"name":"Elite",
-			"requiredSkillLevel":2,
-			"effectBasedOnLevel":false,
-			"effects":[
-				{"type":"SHIP", "script":"data.characters.skills.scripts.FluxRegulation$Level2"},
 			]
 		},
 	],

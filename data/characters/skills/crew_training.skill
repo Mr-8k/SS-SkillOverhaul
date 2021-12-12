@@ -8,8 +8,8 @@
 			"requiredSkillLevel":1,
 			"effectBasedOnLevel":false,
 			"effects":[
-				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.CrewTraining$Level1"},
-				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.CrewTraining$Level2"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.CrewTrainingSkillOverhaul$Level1"},
+				#{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.CrewTrainingSkillOverhaul$Level2"},
 			]
 		},
 	],
