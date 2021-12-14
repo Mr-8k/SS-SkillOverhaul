@@ -23,7 +23,10 @@
     "data/characters/skills/neural_link.skill",
     "data/characters/skills/field_repairs.skill",
     "data/characters/skills/containment_procedures.skill",
-    "data/characters/skills/makeshift_equipment.skill"
+    "data/characters/skills/makeshift_equipment.skill",
+    "data/characters/skills/combat_endurance.skill",
+    "data/characters/skills/support_doctrine.skill",
+    "data/characters/skills/hypercognition.skill"
   ],
   "modPlugin":"data.scripts.plugins.SkillOverhaulPlugin"
 }

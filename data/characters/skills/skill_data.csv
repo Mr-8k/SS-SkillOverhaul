@@ -1,0 +1,12 @@
+id,name,order,tier,reqPoints,reqPointsPerExtraSkill,description,author,combat officer,admiral,admin,tags,icon,
+# COMBAT,,,,,,,,,,,,,
+ordinance_modification,Ordinance Modification,75,4,,,"Ain't nothin' you can't hurt, all you need is a larger shell and some knowhow",unknown Pirate captain,TRUE,,,,graphics/icons/skills/ordnance_expert.png,
+,,,,,,,,,,,,,
+# LEADERSHIP,,,,,,,,,,,,,
+#space_planetary_ops,Space/Planetary Ops,590,5,4,2,The same stars are seen in the sky of every world.,Persean League founding charter,,,TRUE,,graphics/icons/skills/space_planetary_ops.png,
+tactical_drills,Tactical Drills,500,1,0,,"Perfect.
+Now do it again.","Cameron Fourth-Phobos, Coatl Gunnery Range",,TRUE,TRUE,,graphics/icons/skills/weapon_drills.png,
+support_doctrine,Support Doctrine,590,5,4,2,"Not every cadet has talent, skill, or even two brain cells to rub together, but by hell and radiation they'll graduate with discipline.","unattributed comment by Coatl Academy staff, COMSEC archives",,TRUE,TRUE,,graphics/icons/skills/space_ops.png,
+,,,,,,,,,,,,,
+# TECHNOLOGY,,,,,,,,,,,,,
+automated_ships,Automated Ships,1090,6,7,2,[REDACTED],Hegemony COMSEC,,,,,graphics/icons/skills/automated_ships.png,

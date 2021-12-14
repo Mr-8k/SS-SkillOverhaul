@@ -4,7 +4,7 @@
 	"compressHullmods":false,
 	"elite":true,
 	"scope":"FLEET",
-	"permanent":true,
+	#"permanent":true,
 	"effectGroups":[
 		{
 			"requiredSkillLevel":0,

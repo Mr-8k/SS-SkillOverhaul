@@ -1,0 +1,21 @@
+{
+	"id":"support_doctrine",
+	"governingAptitude":"leadership",
+	"compressHullmods":false,
+	"scope":FLEET,
+    #"scopeStr":"fleet",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.SupportDoctrineSkillOverhaul$Level1"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.SupportDoctrineSkillOverhaul$Level2"},
+				{"type":"SHIP", "script":"data.characters.skills.scripts.SupportDoctrineSkillOverhaul$Level3"},
+				{"type":"GOVERNED_OUTPOST", "script":"data.characters.skills.scripts.SpaceOperationsSkillOverhaul$Level0"},
+				{"type":"GOVERNED_OUTPOST", "script":"data.characters.skills.scripts.SpaceOperationsSkillOverhaul$Level1"},
+				{"type":"GOVERNED_OUTPOST", "script":"data.characters.skills.scripts.SpaceOperationsSkillOverhaul$Level2"},
+			]
+		},
+	],
+}

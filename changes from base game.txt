@@ -3,19 +3,28 @@ COMBAT
 Helmsmanship
 - 0-flux bonus also active at up to 1% flux
 
+Combat Endurance
+- Effect now varies between the largest of 60 seconds or 25% base ppt
+
 Target Analysis
 - Now a flat 15% damage bonus to all ships (from scaled to hull size)
+
+NEW SKILL
+Ordnance Modification
++50% damage for armor calc
++10% damage to shields
 
 LEADERSHIP
 
 Tactical Drills
 - Removed DP cap
+- Now also a colony skill, affects ground defenses and stability (+50%/+2)
 
 Coordinated Maneuvers
 - Bonus changed to 1/2/3/4 from 6/3/1/1
 
 Crew Training
-- DpP cap removed
+- DP cap removed
 
 Carrier Group
 - DP cap removed
@@ -31,6 +40,8 @@ Officer Management
 Best of the Best
 - Extra S-mod replaced with 10% OP bonus
 
+Support Doctrine
+- Now also a colony skill, affects access and local fleet size (+30%/+25%)
 
 TECHNOLOGY
 
@@ -47,11 +58,15 @@ Phase Coil Tuning
 - Removed DP cap
 - Bonuses (excluding sensors)
 
+Cybernetic Augmentation
+- Also gains colony management bonuses (+1 admin, +2 personally governed)
+
 Neural Link
 - Removed DP cap
 
 Automated Ships
 - Removed DP cap
+- Moved to end of tree, requires 7 skills to access
 
 
 INDUSTRY
@@ -68,3 +83,5 @@ Makeshift Equipment
 - Fuel use reduction set to 25% flat from 50% / 100 units flat
 
 ADDITIONAL CHANGES
+- Max level is now 40, exp requirements have been adjusted
+- Alpha core admins have colony effects rolled onto their skill

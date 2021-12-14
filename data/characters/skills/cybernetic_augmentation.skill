@@ -1,0 +1,22 @@
+{
+	"id":"cybernetic_augmentation",
+	"governingAptitude":"technology",
+	"compressHullmods":false,
+	"scope":"FLEET",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":0,
+			"effects":[
+				{"type":"DESCRIPTION", "script":"data.characters.skills.scripts.ColonyManagementSkillOverhaul$Level0"},
+			]
+		},
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.ColonyManagementSkillOverhaul$Level1"},
+				{"type":"CHARACTER_STATS", "script":"data.characters.skills.scripts.ColonyManagementSkillOverhaul$Level2"},
+			]
+		},
+	],
+}
