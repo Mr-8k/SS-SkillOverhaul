@@ -1,6 +1,6 @@
 id,name,order,tier,reqPoints,reqPointsPerExtraSkill,description,author,combat officer,admiral,admin,tags,icon,
 # COMBAT,,,,,,,,,,,,,
-ordinance_modification,Ordinance Modification,75,4,,,"Ain't nothin' you can't hurt, all you need is a larger shell and some knowhow",unknown Pirate captain,TRUE,,,,graphics/icons/skills/ordnance_expert.png,
+ordinance_modification,Ordinance Mastery,75,4,,,"Ain't nothin' you can't hurt, all you need is a larger shell and some knowhow",unknown Pirate captain,TRUE,,,,graphics/icons/skills/ordnance_expert.png,
 ,,,,,,,,,,,,,
 # LEADERSHIP,,,,,,,,,,,,,
 #space_planetary_ops,Space/Planetary Ops,590,5,4,2,The same stars are seen in the sky of every world.,Persean League founding charter,,,TRUE,,graphics/icons/skills/space_planetary_ops.png,

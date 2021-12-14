@@ -1,10 +1,13 @@
 {
-  ##stuff in vanilla settings
   "playerMaxLevel":41,
 
+  "adminHireTier0":5000,
+  "adminHireTier1":20000,
+  "adminHireTier2":40000,
+  "adminHireTier3":50000,
 
-  ##stuff added by mod
-
-
-
+  "adminSalaryTier0":2500,
+  "adminSalaryTier1":10000,
+  "adminSalaryTier2":20000,
+  "adminSalaryTier3":25000
 }

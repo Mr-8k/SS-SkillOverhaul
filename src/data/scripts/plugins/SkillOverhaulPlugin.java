@@ -2,6 +2,9 @@ package data.scripts.plugins;
 
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.SectorAPI;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
+
 import static com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription.*;
 import static com.fs.starfarer.api.impl.campaign.skills.NeuralLinkScript.INSTANT_TRANSFER_DP;
 import static data.characters.skills.scripts.CarrierGroupSkillOverhaul.REPLACEMENT_RATE_PERCENT;
@@ -25,6 +28,15 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 
     @Override
     public void onGameLoad(boolean newGame){
+
+        SectorAPI sector = Global.getSector();
+        if (sector.hasScript(OfficerManagerEvent.class)) {
+            sector.removeScriptsOfClass(OfficerManagerEvent.class);
+
+        }
+        if (!sector.hasScript(OfficerManagerEventSkillOverhaul.class)) {
+            sector.addScript(new OfficerManagerEventSkillOverhaul());
+        }
 
         USE_RECOVERY_COST = false;
         

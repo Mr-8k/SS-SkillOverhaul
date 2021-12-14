@@ -10,11 +10,12 @@ public class GunneryImplantsSkillOverhaul {
 	public static float RECOIL_BONUS = 50f;
 	public static float TARGET_LEADING_BONUS = 100f;
 	public static float RANGE_BONUS = 15f;
+	public static float PROJ_SPEED_BONUS = 20;
 	
-	public static float EW_FRIGATES = 6f;
-	public static float EW_DESTROYERS = 3f;
+	//public static float EW_FRIGATES = 6f;
+	//public static float EW_DESTROYERS = 3f;
 	
-	public static class Level1A implements ShipSkillEffect {
+/*	public static class Level1A implements ShipSkillEffect {
 		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
 			float bonus = 0f;
 			if (hullSize == HullSize.FRIGATE) bonus = EW_FRIGATES;
@@ -40,7 +41,7 @@ public class GunneryImplantsSkillOverhaul {
 		public ScopeDescription getScopeDescription() {
 			return ScopeDescription.PILOTED_SHIP;
 		}
-	}
+	}*/
 
 	public static class Level1 implements ShipSkillEffect {
 		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
@@ -117,5 +118,28 @@ public class GunneryImplantsSkillOverhaul {
 			return ScopeDescription.PILOTED_SHIP;
 		}
 	}
-	
+
+	public static class Level4 implements ShipSkillEffect {
+		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+			stats.getProjectileSpeedMult().modifyPercent(id, PROJ_SPEED_BONUS);
+		}
+
+		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+			stats.getProjectileSpeedMult().unmodify(id);
+		}
+
+		public String getEffectDescription(float level) {
+			return "+" + (int)(PROJ_SPEED_BONUS) + "% projectile speed";
+		}
+
+		public String getEffectPerLevelDescription() {
+			return null;
+		}
+
+		public ScopeDescription getScopeDescription() {
+			return ScopeDescription.PILOTED_SHIP;
+		}
+	}
+
+
 }

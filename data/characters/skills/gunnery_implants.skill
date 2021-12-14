@@ -2,7 +2,7 @@
 	"id":"gunnery_implants",
 	"governingAptitude":"technology",
 	"compressHullmods":false,
-	"elite":false,
+	"elite":true,
 	"scope":"PILOTED_SHIP",
 	"effectGroups":[
 		{
@@ -26,7 +26,7 @@
 			"requiredSkillLevel":2,
 			"effectBasedOnLevel":false,
 			"effects":[
-				#{"type":"SHIP", "script":"data.characters.skills.scripts.GunneryImplantsSkillOverhaul$Level1"},
+				{"type":"SHIP", "script":"data.characters.skills.scripts.GunneryImplantsSkillOverhaul$Level4"},
 			]
 		},
 	],

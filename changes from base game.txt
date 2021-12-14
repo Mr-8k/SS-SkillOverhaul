@@ -10,9 +10,11 @@ Target Analysis
 - Now a flat 15% damage bonus to all ships (from scaled to hull size)
 
 NEW SKILL
-Ordnance Modification
+Ordnance Mastery
 +50% damage for armor calc
 +10% damage to shields
+Elite
++25% weapon health
 
 LEADERSHIP
 
@@ -46,7 +48,7 @@ Support Doctrine
 TECHNOLOGY
 
 Gunnery Implants
-- Removed Elite effect entirely
+- Elite effect now grants generalist projectile speed bonus
 
 Electronic Warfare
 - Bonus changed from 1/1/1/1 to 1/2/3/4
@@ -83,5 +85,6 @@ Makeshift Equipment
 - Fuel use reduction set to 25% flat from 50% / 100 units flat
 
 ADDITIONAL CHANGES
-- Max level is now 40, exp requirements have been adjusted
+- Max level is now 41, exp requirements have been adjusted
 - Alpha core admins have colony effects rolled onto their skill
+- Admins now come in 4 tiers, varying from unskilled to all 3 skills, chances of encountering either type are even
