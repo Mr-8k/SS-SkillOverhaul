@@ -1,4 +1,8 @@
-1.0.5
+1.1.2
+-Fix for not removing old officer listener (why is it a thing anyway)
+-This means twice the officers there should have been existed, after a refresh cycle they will return to normal
+
+1.1.0
 -Complete remake of the mod due to 0.95.1a, best check the changes from base to see what is what now
 
 1.0.4

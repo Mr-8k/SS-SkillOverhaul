@@ -3,6 +3,7 @@ package data.scripts.plugins;
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.SectorAPI;
+import com.fs.starfarer.api.campaign.listeners.ListenerManagerAPI;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 
 import static com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription.*;
@@ -33,6 +34,13 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
         if (sector.hasScript(OfficerManagerEvent.class)) {
             sector.removeScriptsOfClass(OfficerManagerEvent.class);
 
+        }
+        ListenerManagerAPI listeners = sector.getListenerManager();
+        if (listeners.hasListener(OfficerManagerEvent.class)){
+            listeners.removeListener(OfficerManagerEvent.class);
+        }
+        if (listeners.hasListenerOfClass(OfficerManagerEvent.class)){
+            listeners.removeListenerOfClass(OfficerManagerEvent.class);
         }
         if (!sector.hasScript(OfficerManagerEventSkillOverhaul.class)) {
             sector.addScript(new OfficerManagerEventSkillOverhaul());
