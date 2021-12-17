@@ -71,7 +71,7 @@ public class TacticalDrillsSkillOverhaul {
 	}
 	
 
-	public static class Level2 extends BaseSkillEffectDescription implements FleetStatsSkillEffect {
+	public static class Level2 implements FleetStatsSkillEffect { //extends BaseSkillEffectDescription
 		public void apply(MutableFleetStatsAPI stats, String id, float level) {
 			stats.getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).modifyPercent(id, ATTACK_BONUS, "Tactical drills");
 		}
@@ -80,7 +80,7 @@ public class TacticalDrillsSkillOverhaul {
 			stats.getDynamic().getMod(Stats.PLANETARY_OPERATIONS_MOD).unmodifyPercent(id);
 		}
 		
-		public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill, 
+/*		public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill,
 						TooltipMakerAPI info, float width) {
 			init(stats, skill);
 
@@ -91,7 +91,7 @@ public class TacticalDrillsSkillOverhaul {
 			info.addSpacer(opad);
 			info.addPara("+%s effectiveness of ground operations such as raids", 0f, hc, hc,
 					"" + (int) ATTACK_BONUS + "%");
-		}
+		}*/
 		
 		public String getEffectDescription(float level) {
 			return "+" + (int)(ATTACK_BONUS) + "% effectiveness of ground operations such as raids"; 

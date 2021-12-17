@@ -4,7 +4,7 @@
 	"compressHullmods":false,
 	"scope":"ALL_COMBAT_SHIPS",
 	#"scope":CUSTOM,
-    #"scopeStr":"all combat ships",
+    #"scopeStr":"all combat ships, ground operations",
 	"effectGroups":[
 		{
 			"requiredSkillLevel":1,
@@ -12,11 +12,12 @@
 			"effects":[
 				{"type":"ALL_SHIPS_IN_FLEET", "script":"data.characters.skills.scripts.TacticalDrillsSkillOverhaul$Level1"},
 				{"type":"HULLMOD_UNLOCK", "hullmods":{"turretgyros":1}},
+				{"type":"GOVERNED_OUTPOST", "script":"data.characters.skills.scripts.SpaceOperationsSkillOverhaul$Level0A"},
 				{"type":"FLEET", "script":"data.characters.skills.scripts.TacticalDrillsSkillOverhaul$Level2"},
 				{"type":"FLEET", "script":"data.characters.skills.scripts.TacticalDrillsSkillOverhaul$Level3"},
-                {"type":"GOVERNED_OUTPOST", "script":"data.characters.skills.scripts.SpaceOperationsSkillOverhaul$Level0"},
+                #{"type":"GOVERNED_OUTPOST", "script":"data.characters.skills.scripts.SpaceOperationsSkillOverhaul$Level0"},
 				{"type":"GOVERNED_OUTPOST", "script":"data.characters.skills.scripts.PlanetaryOperationsSkillOverhaul$Level1"},
-				{"type":"GOVERNED_OUTPOST", "script":"data.characters.skills.scripts.PlanetaryOperationsSkillOverhaul$Level2"}
+				{"type":"GOVERNED_OUTPOST", "script":"data.characters.skills.scripts.PlanetaryOperationsSkillOverhaul$Level2"},
 			]
 		},
 	],

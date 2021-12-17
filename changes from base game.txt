@@ -84,6 +84,9 @@ Makeshift Equipment
 - Removed DP cap
 - Fuel use reduction set to 25% flat from 50% / 100 units flat
 
+Derelict Operations
+- Reduce d-mod effects by 50% (again)
+
 ADDITIONAL CHANGES
 - Max level is now 41, exp requirements have been adjusted
 - Alpha core admins have colony effects rolled onto their skill

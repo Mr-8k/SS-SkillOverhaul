@@ -1,3 +1,9 @@
+1.1.4
+-Derelict operations now reduce d-mod effects by 50% (again)
+-Removed excess listener remover (kek)
+-T3 admins have proper dialog even if better colonies is installed
+-Fixed weird formatting on tactical drills
+
 1.1.2
 -Fix for not removing old officer listener (why is it a thing anyway)
 -This means twice the officers there should have been existed, after a refresh cycle they will return to normal

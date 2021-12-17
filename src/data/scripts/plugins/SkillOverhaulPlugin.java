@@ -36,9 +36,9 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 
         }
         ListenerManagerAPI listeners = sector.getListenerManager();
-        if (listeners.hasListener(OfficerManagerEvent.class)){
+/*        if (listeners.hasListener(OfficerManagerEvent.class)){
             listeners.removeListener(OfficerManagerEvent.class);
-        }
+        }*/
         if (listeners.hasListenerOfClass(OfficerManagerEvent.class)){
             listeners.removeListenerOfClass(OfficerManagerEvent.class);
         }

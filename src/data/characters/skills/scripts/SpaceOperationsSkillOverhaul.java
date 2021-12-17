@@ -53,6 +53,42 @@ public class SpaceOperationsSkillOverhaul {
 		}
 	}
 
+	public static class Level0A extends BaseSkillEffectDescription implements MarketSkillEffect {
+		public void apply(MarketAPI market, String id, float level) {
+			//market.getAccessibilityMod().modifyFlat(id, ACCESS, "Space operations");
+		}
+
+		public void unapply(MarketAPI market, String id) {
+			//market.getAccessibilityMod().unmodifyFlat(id);
+		}
+
+		public void createCustomDescription(MutableCharacterStatsAPI stats, SkillSpecAPI skill,
+											TooltipMakerAPI info, float width) {
+			init(stats, skill);
+			float opad = 10f;
+			Color c = Misc.getBasePlayerColor();
+			//info.addPara("Affects: %s", opad + 5f, Misc.getGrayColor(), c, "fleet");
+			info.addPara("Affects: %s", opad + 5f, Misc.getGrayColor(), c, "ground operations");
+			info.addSpacer(opad);
+			//String stuff = "+" + (int)Math.round(ACCESS * 100f) + "% accessibility\n" + "+" + (int)Math.round(FLEET_SIZE) + "% fleet size";
+/*			String stuff = "+" + (int)Math.round(ACCESS * 100f) + "% accessibility";
+			info.addPara((String) stuff, 0f, hc, hc,
+					"" + "");*/
+		}
+
+		public String getEffectDescription(float level) {
+			return null;
+		}
+
+		public String getEffectPerLevelDescription() {
+			return null;
+		}
+
+		public ScopeDescription getScopeDescription() {
+			return null;
+		}
+	}
+
 	public static class Level1 implements MarketSkillEffect {
 		public void apply(MarketAPI market, String id, float level) {
 			market.getAccessibilityMod().modifyFlat(id, ACCESS, "Space operations");
