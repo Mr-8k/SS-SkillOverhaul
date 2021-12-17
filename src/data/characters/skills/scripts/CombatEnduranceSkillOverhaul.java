@@ -33,21 +33,32 @@ public class CombatEnduranceSkillOverhaul {
 	public static float TOTAL_REGEN_MAX_POINTS = 2000f;
 	public static float TOTAL_REGEN_MAX_HULL_FRACTION = 0.5f;
 	public static float BASE_PPT;
+	public static boolean percent;
 
 	public static class Level1 implements ShipSkillEffect, AfterShipCreationSkillEffect {
 
 		public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
 			BASE_PPT = ship.getHullSpec().getNoCRLossSeconds();
+			if (BASE_PPT > (100/PEAK_TIME_BONUS_PERCENT)*PEAK_TIME_BONUS)
+				percent = true;
 		}
 
 		public void unapplyEffectsAfterShipCreation(ShipAPI ship, String id) {
+			percent = false;
+			BASE_PPT = ship.getHullSpec().getNoCRLossSeconds();
+			if (BASE_PPT > (100/PEAK_TIME_BONUS_PERCENT)*PEAK_TIME_BONUS)
+				percent = true;
 		}
 
 		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
-			if (BASE_PPT > 360)
-				stats.getPeakCRDuration().modifyPercent(id, 1+PEAK_TIME_BONUS_PERCENT/100);
-			else
+			if (percent) {
+				stats.getPeakCRDuration().modifyPercent(id, PEAK_TIME_BONUS_PERCENT);
+				stats.getPeakCRDuration().unmodifyFlat(id);
+			}
+			else {
 				stats.getPeakCRDuration().modifyFlat(id, PEAK_TIME_BONUS);
+				stats.getPeakCRDuration().unmodifyPercent(id);
+			}
 		}
 		
 		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
