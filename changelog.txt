@@ -1,5 +1,8 @@
+1.1.6
+-Fixed combat endurance values, except this time for the vanilla hotfix
+
 1.1.5
--Fixed combat endurance wrong values
+-Fixed combat endurance values
 
 1.1.4
 -Derelict operations now reduces d-mod effects by 50% (again)
