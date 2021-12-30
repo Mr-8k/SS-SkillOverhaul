@@ -1,10 +1,10 @@
 {
   "id":"ESP_Skill_Overhaul",
-  "name":"Skill Overhaul",
+  "name":"zz_Skill Overhaul",
   "author":"Entity 8000",
-  "version":"1.1.6",
+  "version":"1.1.7",
   "description":"Shifts the attention away from smaller ships, edits multiple skills, removes skill requirements, changes max level and required xp",
-  "gameVersion":"0.95.1a-RC5",
+  "gameVersion":"0.95.1a-RC6",
   "jars":["jars/ESP_Skill_Overhaul.jar"],
   "replace":[
     "data/characters/skills/target_analysis.skill",

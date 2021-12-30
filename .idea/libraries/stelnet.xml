@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="stelnet">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../stelnet/stelnet.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -16,7 +16,7 @@ import com.fs.starfarer.api.util.Misc;
 public class PlanetaryOperationsSkillOverhaul {
 	
 	public static int ATTACK_BONUS = 100;
-	public static int DEFEND_BONUS = 50;
+	public static int DEFEND_BONUS = 100;
 	public static float CASUALTIES_MULT = 0.75f;
 	public static float STABILITY_BONUS = 2;
 	

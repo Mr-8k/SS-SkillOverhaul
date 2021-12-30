@@ -1,3 +1,8 @@
+1.1.7
+-stelnet compatibility implemented
+-neural interface/integrator now cost 0
+-tactical drill ground bonuses up to 100/100 form 50/50
+
 1.1.6
 -Fixed combat endurance values, except this time for the vanilla hotfix
 

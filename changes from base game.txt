@@ -20,7 +20,7 @@ LEADERSHIP
 
 Tactical Drills
 - Removed DP cap
-- Now also a colony skill, affects ground defenses and stability (+50%/+2)
+- Now also a colony skill, affects ground defenses and stability (+100%/+2), raid strength up to +100% from +50%
 
 Coordinated Maneuvers
 - Bonus changed to 1/2/3/4 from 6/3/1/1
@@ -91,3 +91,4 @@ ADDITIONAL CHANGES
 - Max level is now 41, exp requirements have been adjusted
 - Alpha core admins have colony effects rolled onto their skill
 - Admins now come in 4 tiers, varying from unskilled to all 3 skills, chances of encountering either type are even
+- Neural interface/integrator now cost 0

@@ -21,7 +21,7 @@ public class TacticalDrillsSkillOverhaul {
 	
 	public static float DAMAGE_PERCENT = 5;
 	
-	public static int ATTACK_BONUS = 50;
+	public static int ATTACK_BONUS = 100;
 	public static float CASUALTIES_MULT = 0.75f;
 	
 	
