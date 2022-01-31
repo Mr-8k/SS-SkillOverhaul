@@ -9,5 +9,32 @@
   "adminSalaryTier0":2500,
   "adminSalaryTier1":10000,
   "adminSalaryTier2":20000,
-  "adminSalaryTier3":25000
+  "adminSalaryTier3":25000,
+
+
+  "SkillOverhaul_FIGHTER_BAYS_THRESHOLD":99999,
+  "SkillOverhaul_OP_THRESHOLD":99999,
+  "SkillOverhaul_OP_LOW_THRESHOLD":99999,
+  "SkillOverhaul_OP_ALL_LOW_THRESHOLD":99999,
+  "SkillOverhaul_OP_ALL_THRESHOLD":99999,
+  "SkillOverhaul_PHASE_OP_THRESHOLD":99999,
+  "SkillOverhaul_MILITARIZED_OP_THRESHOLD":99999,
+  "SkillOverhaul_AUTOMATED_POINTS_THRESHOLD":99999,
+
+  "SkillOverhaul_INSTANT_TRANSFER_DP":99999,
+
+  "SkillOverhaul_FUEL_USE_REDUCTION_MAX_FUEL":99999,
+  "SkillOverhaul_SUPPLY_USE_REDUCTION_MAX_UNITS":99999,
+
+
+  "SkillOverhaul_REPLACEMENT_RATE_PERCENT":25,
+  "SkillOverhaul_RECOIL_BONUS":25,
+  "SkillOverhaul_PHASE_SPEED_BONUS":50,
+  "SkillOverhaul_PEAK_TIME_BONUS":100,
+
+  "SkillOverhaul_FUEL_USE_REDUCTION_MAX_PERCENT":25,
+  "SkillOverhaul_SUPPLY_USE_REDUCTION_MAX_PERCENT":25
+
+
+  
 }

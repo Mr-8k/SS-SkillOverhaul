@@ -18,7 +18,7 @@ import com.fs.starfarer.api.util.Misc;
 public class CarrierGroupSkillOverhaul {
 	
 	public static float REPLACEMENT_RATE_PERCENT = 50;
-	public static float FIGHTER_RAMAGE_REDUCTION = 15f;
+	public static float FIGHTER_DAMAGE_REDUCTION = 15f;
 	
 	public static float OFFICER_MULT = 1.5f;
 	public static boolean isOfficer(MutableShipStatsAPI stats) {
@@ -79,9 +79,9 @@ public class CarrierGroupSkillOverhaul {
 
 	public static class Level2 implements ShipSkillEffect {
 		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
-			stats.getHullDamageTakenMult().modifyMult(id, 1f - FIGHTER_RAMAGE_REDUCTION / 100f);
-			stats.getArmorDamageTakenMult().modifyMult(id, 1f - FIGHTER_RAMAGE_REDUCTION / 100f);
-			stats.getShieldDamageTakenMult().modifyMult(id, 1f - FIGHTER_RAMAGE_REDUCTION / 100f);
+			stats.getHullDamageTakenMult().modifyMult(id, 1f - FIGHTER_DAMAGE_REDUCTION / 100f);
+			stats.getArmorDamageTakenMult().modifyMult(id, 1f - FIGHTER_DAMAGE_REDUCTION / 100f);
+			stats.getShieldDamageTakenMult().modifyMult(id, 1f - FIGHTER_DAMAGE_REDUCTION / 100f);
 		}
 
 		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
@@ -91,7 +91,7 @@ public class CarrierGroupSkillOverhaul {
 		}
 
 		public String getEffectDescription(float level) {
-			return "-" + (int)(FIGHTER_RAMAGE_REDUCTION) + "% damage taken by fighters";
+			return "-" + (int)(FIGHTER_DAMAGE_REDUCTION) + "% damage taken by fighters";
 		}
 
 		public String getEffectPerLevelDescription() {

@@ -1,3 +1,7 @@
+1.1.8
+-some stat numbers now configurable
+-default value for phase corps to 100s/+50% from 90s/+25%
+
 1.1.7
 -stelnet compatibility implemented
 -neural interface/integrator now cost 0

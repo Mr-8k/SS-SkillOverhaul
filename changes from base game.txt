@@ -34,6 +34,7 @@ Carrier Group
 - 15% fighter damage resist added, does not scale with officer
 
 Fighter Uplink
+- DP cap removed
 - 10% replacement rate bonus added, scales with officer
 
 Officer Management
@@ -58,7 +59,7 @@ Flux Regulation
 
 Phase Coil Tuning
 - Removed DP cap
-- Bonuses (excluding sensors)
+- Bonus PPT/Speed changed to 100s/50% from 180/50%
 
 Cybernetic Augmentation
 - Also gains colony management bonuses (+1 admin, +2 personally governed)

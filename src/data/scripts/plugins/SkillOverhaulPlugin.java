@@ -48,24 +48,31 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 
         USE_RECOVERY_COST = false;
         
-        FIGHTER_BAYS_THRESHOLD = 99999;
-        OP_THRESHOLD = 99999;
-        OP_LOW_THRESHOLD = 99999;
-        OP_ALL_LOW_THRESHOLD = 99999;
-        OP_ALL_THRESHOLD = 99999;
-        PHASE_OP_THRESHOLD = 99999;
-        MILITARIZED_OP_THRESHOLD = 99999;
-        AUTOMATED_POINTS_THRESHOLD = 99999;
+        FIGHTER_BAYS_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_FIGHTER_BAYS_THRESHOLD");
+        OP_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_OP_THRESHOLD");
+        OP_LOW_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_OP_LOW_THRESHOLD");
+        OP_ALL_LOW_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_OP_ALL_LOW_THRESHOLD");
+        OP_ALL_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_OP_ALL_THRESHOLD");
+        PHASE_OP_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_PHASE_OP_THRESHOLD");
+        MILITARIZED_OP_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_MILITARIZED_OP_THRESHOLD");
+        AUTOMATED_POINTS_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_AUTOMATED_POINTS_THRESHOLD");
 
-        REPLACEMENT_RATE_PERCENT = 25f;
-        RECOIL_BONUS = 25f;
-        PHASE_SPEED_BONUS = 25f;
-        PEAK_TIME_BONUS = 90f;
-        INSTANT_TRANSFER_DP = 99999;
-        FUEL_USE_REDUCTION_MAX_PERCENT = 25;
-        SUPPLY_USE_REDUCTION_MAX_PERCENT = 25;
-        FUEL_USE_REDUCTION_MAX_FUEL = 99999;
-        SUPPLY_USE_REDUCTION_MAX_UNITS = 99999;
+        INSTANT_TRANSFER_DP = Global.getSettings().getFloat("SkillOverhaul_INSTANT_TRANSFER_DP");
+
+        FUEL_USE_REDUCTION_MAX_FUEL = Global.getSettings().getFloat("SkillOverhaul_FUEL_USE_REDUCTION_MAX_FUEL");
+        SUPPLY_USE_REDUCTION_MAX_UNITS = Global.getSettings().getFloat("SkillOverhaul_SUPPLY_USE_REDUCTION_MAX_UNITS");
+
+
+        REPLACEMENT_RATE_PERCENT = Global.getSettings().getFloat("SkillOverhaul_REPLACEMENT_RATE_PERCENT");
+        RECOIL_BONUS = Global.getSettings().getFloat("SkillOverhaul_RECOIL_BONUS");
+        PHASE_SPEED_BONUS = Global.getSettings().getFloat("SkillOverhaul_PHASE_SPEED_BONUS");
+        PEAK_TIME_BONUS = Global.getSettings().getFloat("SkillOverhaul_PEAK_TIME_BONUS");
+
+        FUEL_USE_REDUCTION_MAX_PERCENT = Global.getSettings().getFloat("SkillOverhaul_FUEL_USE_REDUCTION_MAX_PERCENT");
+        SUPPLY_USE_REDUCTION_MAX_PERCENT = Global.getSettings().getFloat("SkillOverhaul_SUPPLY_USE_REDUCTION_MAX_PERCENT");
+
+
+
 
     }
 }
