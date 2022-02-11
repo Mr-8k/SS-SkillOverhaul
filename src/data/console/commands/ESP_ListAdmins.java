@@ -109,7 +109,7 @@ public class ESP_ListAdmins implements BaseCommand {
                     T3++;
                     break;
             }
-        }
+        } // end list operations
         // format statistics in console
         Console.showMessage(
                 "T0: " + T0 + " | percentage: " + (float) T0 / count * 100 + "%" + '\n' +

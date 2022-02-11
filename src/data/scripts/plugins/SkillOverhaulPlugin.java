@@ -108,18 +108,8 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
         for (MarketAPI market : markets) {
             List<PersonAPI> people = market.getPeopleCopy();
             for (PersonAPI person : people) {
-
                 if (person.getMemoryWithoutUpdate().getBoolean("$ome_hireable")) {
-
-                    if (person.getMemoryWithoutUpdate().getBoolean("$ome_isAdmin")) {
-                        removePerson(market, person);
-                    }
-                    else if (person.getMemoryWithoutUpdate().getBoolean("$isMercenary")) {
-                        removePerson(market, person);
-                    }
-                    else {
-                        removePerson(market, person);
-                    }
+                    removePerson(market, person);
                 }
             }
         }
