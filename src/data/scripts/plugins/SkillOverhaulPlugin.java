@@ -102,7 +102,6 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
     }
 
 //wipe away all officers/mercs/admins
-//for all practical intents they no longer exist, however they remain listed as a part of AvailableOfficer (of the original class) in the save file
     public void cleanUpPeople() {
 
         List<MarketAPI> markets = Global.getSector().getEconomy().getMarketsCopy();
@@ -113,34 +112,26 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
                 if (person.getMemoryWithoutUpdate().getBoolean("$ome_hireable")) {
 
                     if (person.getMemoryWithoutUpdate().getBoolean("$ome_isAdmin")) {
-                        market.getCommDirectory().removePerson(person);
-                        market.removePerson(person);
-                        person.getMemoryWithoutUpdate().unset("$ome_hireable");
-                        person.getMemoryWithoutUpdate().unset("$ome_eventRef");
-                        person.getMemoryWithoutUpdate().unset("$ome_hiringBonus");
-                        person.getMemoryWithoutUpdate().unset("$ome_salary");
-                        log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
+                        removePerson(market, person);
                     }
                     else if (person.getMemoryWithoutUpdate().getBoolean("$isMercenary")) {
-                        market.getCommDirectory().removePerson(person);
-                        market.removePerson(person);
-                        person.getMemoryWithoutUpdate().unset("$ome_hireable");
-                        person.getMemoryWithoutUpdate().unset("$ome_eventRef");
-                        person.getMemoryWithoutUpdate().unset("$ome_hiringBonus");
-                        person.getMemoryWithoutUpdate().unset("$ome_salary");
-                        log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
+                        removePerson(market, person);
                     }
                     else {
-                        market.getCommDirectory().removePerson(person);
-                        market.removePerson(person);
-                        person.getMemoryWithoutUpdate().unset("$ome_hireable");
-                        person.getMemoryWithoutUpdate().unset("$ome_eventRef");
-                        person.getMemoryWithoutUpdate().unset("$ome_hiringBonus");
-                        person.getMemoryWithoutUpdate().unset("$ome_salary");
-                        log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
+                        removePerson(market, person);
                     }
                 }
             }
         }
+    }
+
+    public void removePerson (MarketAPI market, PersonAPI person){
+        market.getCommDirectory().removePerson(person);
+        market.removePerson(person);
+        person.getMemoryWithoutUpdate().unset("$ome_hireable");
+        person.getMemoryWithoutUpdate().unset("$ome_eventRef");
+        person.getMemoryWithoutUpdate().unset("$ome_hiringBonus");
+        person.getMemoryWithoutUpdate().unset("$ome_salary");
+        log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
     }
 }
