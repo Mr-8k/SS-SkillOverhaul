@@ -115,16 +115,28 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
                     if (person.getMemoryWithoutUpdate().getBoolean("$ome_isAdmin")) {
                         market.getCommDirectory().removePerson(person);
                         market.removePerson(person);
+                        person.getMemoryWithoutUpdate().unset("$ome_hireable");
+                        person.getMemoryWithoutUpdate().unset("$ome_eventRef");
+                        person.getMemoryWithoutUpdate().unset("$ome_hiringBonus");
+                        person.getMemoryWithoutUpdate().unset("$ome_salary");
                         log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
                     }
                     else if (person.getMemoryWithoutUpdate().getBoolean("$isMercenary")) {
                         market.getCommDirectory().removePerson(person);
                         market.removePerson(person);
+                        person.getMemoryWithoutUpdate().unset("$ome_hireable");
+                        person.getMemoryWithoutUpdate().unset("$ome_eventRef");
+                        person.getMemoryWithoutUpdate().unset("$ome_hiringBonus");
+                        person.getMemoryWithoutUpdate().unset("$ome_salary");
                         log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
                     }
                     else {
                         market.getCommDirectory().removePerson(person);
                         market.removePerson(person);
+                        person.getMemoryWithoutUpdate().unset("$ome_hireable");
+                        person.getMemoryWithoutUpdate().unset("$ome_eventRef");
+                        person.getMemoryWithoutUpdate().unset("$ome_hiringBonus");
+                        person.getMemoryWithoutUpdate().unset("$ome_salary");
                         log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
                     }
                 }
