@@ -3,51 +3,76 @@ package data.scripts.plugins;
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.SectorAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.listeners.ListenerManagerAPI;
+import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
+import org.apache.log4j.Logger;
+
+import java.util.List;
 
 import static com.fs.starfarer.api.impl.campaign.skills.BaseSkillEffectDescription.*;
 import static com.fs.starfarer.api.impl.campaign.skills.NeuralLinkScript.INSTANT_TRANSFER_DP;
 import static data.characters.skills.scripts.CarrierGroupSkillOverhaul.REPLACEMENT_RATE_PERCENT;
-import static data.characters.skills.scripts.GunneryImplantsSkillOverhaul.RECOIL_BONUS;
-import static data.characters.skills.scripts.PhaseCorpsSkillOverhaul.PHASE_SPEED_BONUS;
-import static data.characters.skills.scripts.PhaseCorpsSkillOverhaul.PEAK_TIME_BONUS;
-import static data.characters.skills.scripts.ContainmentProceduresSkillOverhaul.FUEL_USE_REDUCTION_MAX_PERCENT;
 import static data.characters.skills.scripts.ContainmentProceduresSkillOverhaul.FUEL_USE_REDUCTION_MAX_FUEL;
+import static data.characters.skills.scripts.ContainmentProceduresSkillOverhaul.FUEL_USE_REDUCTION_MAX_PERCENT;
+import static data.characters.skills.scripts.GunneryImplantsSkillOverhaul.RECOIL_BONUS;
 import static data.characters.skills.scripts.MakeshiftEquipmentSkillOverhaul.SUPPLY_USE_REDUCTION_MAX_PERCENT;
 import static data.characters.skills.scripts.MakeshiftEquipmentSkillOverhaul.SUPPLY_USE_REDUCTION_MAX_UNITS;
+import static data.characters.skills.scripts.PhaseCorpsSkillOverhaul.PEAK_TIME_BONUS;
+import static data.characters.skills.scripts.PhaseCorpsSkillOverhaul.PHASE_SPEED_BONUS;
 
 
 public class SkillOverhaulPlugin extends BaseModPlugin {
 
     public static boolean hasNexerelin;
+    public static Logger log = Global.getLogger(SkillOverhaulPlugin.class);
 
     @Override
     public void onApplicationLoad() {
+//nex check
         hasNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
     }
 
+//on first run, clean people for the new script
     @Override
-    public void onGameLoad(boolean newGame){
+    public void onEnabled(boolean wasEnabledBefore) {
+        cleanUpPeople();
+    }
+
+    @Override
+    public void onGameLoad(boolean newGame) {
 
         SectorAPI sector = Global.getSector();
+        ListenerManagerAPI listeners = sector.getListenerManager();
+
+//remove vanilla script + listener
         if (sector.hasScript(OfficerManagerEvent.class)) {
             sector.removeScriptsOfClass(OfficerManagerEvent.class);
-
         }
-        ListenerManagerAPI listeners = sector.getListenerManager();
-/*        if (listeners.hasListener(OfficerManagerEvent.class)){
-            listeners.removeListener(OfficerManagerEvent.class);
-        }*/
-        if (listeners.hasListenerOfClass(OfficerManagerEvent.class)){
+        if (listeners.hasListenerOfClass(OfficerManagerEvent.class)) {
             listeners.removeListenerOfClass(OfficerManagerEvent.class);
         }
-        if (!sector.hasScript(OfficerManagerEventSkillOverhaul.class)) {
-            sector.addScript(new OfficerManagerEventSkillOverhaul());
+
+/// for save compatibility with 1.1.8
+        if (sector.hasScript(OfficerManagerEventSkillOverhaul.class)) {
+            sector.removeScriptsOfClass(OfficerManagerEventSkillOverhaul.class);
+        }
+        if (listeners.hasListenerOfClass(OfficerManagerEventSkillOverhaul.class)) {
+            listeners.removeListenerOfClass(OfficerManagerEventSkillOverhaul.class);
+            cleanUpPeople();
         }
 
+//put the good stuff in
+        if (!sector.hasScript(OfficerManagerEventSkillOverhaul2.class)) {
+            cleanUpPeople();
+            sector.addScript(new OfficerManagerEventSkillOverhaul2());
+        }
+
+//allow changing of values in BaseSkillEffectDescription
         USE_RECOVERY_COST = false;
-        
+
+//Get the numbers from the settings file
         FIGHTER_BAYS_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_FIGHTER_BAYS_THRESHOLD");
         OP_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_OP_THRESHOLD");
         OP_LOW_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_OP_LOW_THRESHOLD");
@@ -74,5 +99,36 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 
 
 
+    }
+
+//wipe away all officers/mercs/admins
+//for all practical intents they no longer exist, however they remain listed as a part of AvailableOfficer (of the original class) in the save file
+    public void cleanUpPeople() {
+
+        List<MarketAPI> markets = Global.getSector().getEconomy().getMarketsCopy();
+        for (MarketAPI market : markets) {
+            List<PersonAPI> people = market.getPeopleCopy();
+            for (PersonAPI person : people) {
+
+                if (person.getMemoryWithoutUpdate().getBoolean("$ome_hireable")) {
+
+                    if (person.getMemoryWithoutUpdate().getBoolean("$ome_isAdmin")) {
+                        market.getCommDirectory().removePerson(person);
+                        market.removePerson(person);
+                        log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
+                    }
+                    else if (person.getMemoryWithoutUpdate().getBoolean("$isMercenary")) {
+                        market.getCommDirectory().removePerson(person);
+                        market.removePerson(person);
+                        log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
+                    }
+                    else {
+                        market.getCommDirectory().removePerson(person);
+                        market.removePerson(person);
+                        log.info("Removed " + person.getPost() + " " + person.getNameString() + " from market " + market.getName() + " of faction " + market.getFaction().getId());
+                    }
+                }
+            }
+        }
     }
 }

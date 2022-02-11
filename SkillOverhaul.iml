@@ -9,7 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="starsector-core 095" level="application" />
     <orderEntry type="library" name="ExerelinCore 095" level="application" />
-    <orderEntry type="library" name="stelnet" level="project" />
-    <orderEntry type="library" name="lombok" level="project" />
+    <orderEntry type="library" name="lw_Console 095" level="application" />
   </component>
 </module>

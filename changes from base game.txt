@@ -90,6 +90,10 @@ Derelict Operations
 
 ADDITIONAL CHANGES
 - Max level is now 41, exp requirements have been adjusted
-- Alpha core admins have colony effects rolled onto their skill
-- Admins now come in 4 tiers, varying from unskilled to all 3 skills, chances of encountering either type are even
+- Alpha core admins have all colony skill effects rolled onto their skill
+- Admins now come in 4 tiers, varying from unskilled to all 3 skills, chances of encountering any type are even
 - Neural interface/integrator now cost 0
+
+ADDITIONAL INFORMATION
+- Can be added to an existing save
+- Cannot be removed from an existing save

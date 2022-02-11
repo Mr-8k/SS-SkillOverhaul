@@ -1,0 +1,2 @@
+command,class,tags,syntax,help
+ESP_ListAdmins,data.console.commands.ESP_ListAdmins,campaign,ESP_ListAdmins,List all freelance adims and their tier.

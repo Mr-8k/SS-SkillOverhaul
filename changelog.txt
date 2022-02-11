@@ -1,3 +1,9 @@
+1.2.0
+-Removed now pointless prefix
+-Finally interacts properly with Stelnet, no further patches required
+-Now cleans up orphaned people when replacing script (occurs when activated mid-run or upgrading from 1.1.8a and below)
+-New command to list admins "ESP_ListAdmins". Originally for debugging, I've opted to keep it. Lists tiers, names, locations and skills of all admins.
+
 1.1.8
 -some stat numbers now configurable
 -default value for phase corps to 100s/+50% from 90s/+25%
