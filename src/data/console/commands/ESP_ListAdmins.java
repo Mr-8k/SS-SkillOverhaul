@@ -23,6 +23,10 @@ public class ESP_ListAdmins implements BaseCommand {
 
         //iterate over all markets
         List<MarketAPI> markets = Global.getSector().getEconomy().getMarketsCopy();
+        if (markets.isEmpty()){
+            Console.showMessage("Only applicable on the campaign layer.");
+            return CommandResult.WRONG_CONTEXT;
+        }
         for (MarketAPI market : markets) {
             //update market
             ESP_ListAdmins.updateMarket(market);

@@ -62,15 +62,14 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
             listeners.removeListenerOfClass(OfficerManagerEventSkillOverhaul.class);
             cleanUpPeople();
         }
-
 //put the good stuff in
         if (!sector.hasScript(OfficerManagerEventSkillOverhaul2.class)) {
             cleanUpPeople();
             sector.addScript(new OfficerManagerEventSkillOverhaul2());
         }
 
-//allow changing of values in BaseSkillEffectDescription
-        USE_RECOVERY_COST = false;
+//oops
+        //USE_RECOVERY_COST = false;
 
 //Get the numbers from the settings file
         FIGHTER_BAYS_THRESHOLD = Global.getSettings().getFloat("SkillOverhaul_FIGHTER_BAYS_THRESHOLD");
