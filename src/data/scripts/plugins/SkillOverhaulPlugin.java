@@ -84,6 +84,7 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
             for (PersonAPI person : people) {
                 if (person.getMemoryWithoutUpdate().getBoolean("$ome_hireable")) {
                     doNotReset = true;
+                    break;
                 }
             }
         }
