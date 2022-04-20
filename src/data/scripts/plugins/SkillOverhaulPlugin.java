@@ -79,12 +79,13 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
         boolean doNotReset = false;
 
         List<MarketAPI> markets = Global.getSector().getEconomy().getMarketsCopy();
+        mainLoop:
         for (MarketAPI market : markets) {
             List<PersonAPI> people = market.getPeopleCopy();
             for (PersonAPI person : people) {
                 if (person.getMemoryWithoutUpdate().getBoolean("$ome_hireable")) {
                     doNotReset = true;
-                    break;
+                    break mainLoop;
                 }
             }
         }
