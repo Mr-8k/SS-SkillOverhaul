@@ -1,4 +1,4 @@
 command,class,tags,syntax,help
 ESP_ListAdmins,data.console.commands.ESP_ListAdmins,campaign,ESP_ListAdmins,List all freelance adims and their tier.
-ESP_zCheckScripts,data.console.commands.ESP_zResetScripts,campaign,ESP_zCheckScripts,Integrity check for scripts.
+ESP_zCheckScripts,data.console.commands.ESP_zCheckScripts,campaign,ESP_zCheckScripts,Integrity check for scripts.
 ESP_zResetScripts,data.console.commands.ESP_zResetScripts,campaign,ESP_zResetScripts,Reset script in case of issue.

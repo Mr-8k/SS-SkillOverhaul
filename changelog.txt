@@ -1,3 +1,8 @@
+1.2.1
+-Minor update to fix issue when reloading a fresh save, meaning the one made as the world is generated.
+    -Would cause no people to spawn.
+-2 debug commands have been added, I'd recommend against using them.
+
 1.2.0
 -Removed now pointless prefix
 -Finally interacts properly with Stelnet, no further patches required
