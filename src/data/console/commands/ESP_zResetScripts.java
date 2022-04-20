@@ -6,7 +6,7 @@ import data.scripts.plugins.OfficerManagerEventSkillOverhaul2;
 import org.lazywizard.console.BaseCommand;
 import org.lazywizard.console.Console;
 
-public class zESP_ResetScripts implements BaseCommand {
+public class ESP_zResetScripts implements BaseCommand {
 
     @Override
     public CommandResult runCommand(String args, CommandContext context) {

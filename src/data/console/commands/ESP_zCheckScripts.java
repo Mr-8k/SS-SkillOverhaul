@@ -9,7 +9,7 @@ import data.scripts.plugins.OfficerManagerEventSkillOverhaul2;
 import org.lazywizard.console.BaseCommand;
 import org.lazywizard.console.Console;
 
-public class zESP_CheckScripts implements BaseCommand {
+public class ESP_zCheckScripts implements BaseCommand {
 
 
     @Override
