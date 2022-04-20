@@ -8,6 +8,7 @@ import com.fs.starfarer.api.campaign.listeners.ListenerManagerAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import org.apache.log4j.Logger;
+import org.lazywizard.console.Console;
 
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 
     public static boolean hasNexerelin;
     public static Logger log = Global.getLogger(SkillOverhaulPlugin.class);
+    boolean onEnabled = false;
 
     @Override
     public void onApplicationLoad() {
@@ -49,23 +51,49 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 //remove vanilla script + listener
         if (sector.hasScript(OfficerManagerEvent.class)) {
             sector.removeScriptsOfClass(OfficerManagerEvent.class);
+            log.info("Removed vanilla script");
         }
         if (listeners.hasListenerOfClass(OfficerManagerEvent.class)) {
             listeners.removeListenerOfClass(OfficerManagerEvent.class);
+            log.info("Removed vanilla listener");
         }
 
 /// for save compatibility with 1.1.8
         if (sector.hasScript(OfficerManagerEventSkillOverhaul.class)) {
             sector.removeScriptsOfClass(OfficerManagerEventSkillOverhaul.class);
+            log.info("Removed script for compatibility with 1.1.8");
         }
         if (listeners.hasListenerOfClass(OfficerManagerEventSkillOverhaul.class)) {
             listeners.removeListenerOfClass(OfficerManagerEventSkillOverhaul.class);
             cleanUpPeople();
+            log.info("Removed listener for compatibility with 1.1.8");
         }
 //put the good stuff in
         if (!sector.hasScript(OfficerManagerEventSkillOverhaul2.class)) {
             cleanUpPeople();
             sector.addScript(new OfficerManagerEventSkillOverhaul2());
+            log.info("Added OfficerManagerEventSkillOverhaul2 script");
+        }
+
+//when loading a save with no time pass, meaning the first made when the game starts, officers do not populate, this is an attempt to fix this
+        boolean doNotReset = false;
+
+        List<MarketAPI> markets = Global.getSector().getEconomy().getMarketsCopy();
+        for (MarketAPI market : markets) {
+            List<PersonAPI> people = market.getPeopleCopy();
+            for (PersonAPI person : people) {
+                if (person.getMemoryWithoutUpdate().getBoolean("$ome_hireable")) {
+                    doNotReset = true;
+                }
+            }
+        }
+
+        if (!doNotReset) {
+            if (sector.hasScript(OfficerManagerEventSkillOverhaul2.class)) {
+                sector.removeScriptsOfClass(OfficerManagerEventSkillOverhaul2.class);
+                sector.addScript(new OfficerManagerEventSkillOverhaul2());
+                log.info("ESP doNotReset has triggered");
+            }
         }
 
 //oops

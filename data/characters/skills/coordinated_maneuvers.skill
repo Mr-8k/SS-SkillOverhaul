@@ -2,8 +2,8 @@
 	"id":"coordinated_maneuvers",
 	"governingAptitude":"leadership",
 	"compressHullmods":false,
-	"scope":"CUSTOM",
-	"scopeStr":"all frigates and destroyers with officers, including flagship",
+	"scope":"ALL_COMBAT_SHIPS",
+	#"scopeStr":"all frigates and destroyers with officers, including flagship",
 	#"scope2":"FLEET",
 	"effectGroups":[
 		{
