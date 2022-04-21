@@ -61,11 +61,12 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 /// for save compatibility with 1.1.8
         if (sector.hasScript(OfficerManagerEventSkillOverhaul.class)) {
             sector.removeScriptsOfClass(OfficerManagerEventSkillOverhaul.class);
+            cleanUpPeople();
             log.info("Removed script for compatibility with 1.1.8");
         }
         if (listeners.hasListenerOfClass(OfficerManagerEventSkillOverhaul.class)) {
             listeners.removeListenerOfClass(OfficerManagerEventSkillOverhaul.class);
-            cleanUpPeople();
+            //cleanUpPeople();
             log.info("Removed listener for compatibility with 1.1.8");
         }
 //put the good stuff in
@@ -73,6 +74,11 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
             cleanUpPeople();
             sector.addScript(new OfficerManagerEventSkillOverhaul2());
             log.info("Added OfficerManagerEventSkillOverhaul2 script");
+        }
+        if (!listeners.hasListenerOfClass(OfficerManagerEventSkillOverhaul2.class)) {
+            listeners.addListener(new OfficerManagerEventSkillOverhaul2());
+            //cleanUpPeople();
+            log.info("Added OfficerManagerEventSkillOverhaul2 listener");
         }
 
 //when loading a save with no time pass, meaning the first made when the game starts, officers do not populate, this is an attempt to fix this
