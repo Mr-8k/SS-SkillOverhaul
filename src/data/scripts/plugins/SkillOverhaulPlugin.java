@@ -8,7 +8,6 @@ import com.fs.starfarer.api.campaign.listeners.ListenerManagerAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import org.apache.log4j.Logger;
-import org.lazywizard.console.Console;
 
 import java.util.List;
 
@@ -53,10 +52,10 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
             sector.removeScriptsOfClass(OfficerManagerEvent.class);
             log.info("Removed vanilla script");
         }
-        if (listeners.hasListenerOfClass(OfficerManagerEvent.class)) {
+/*        if (listeners.hasListenerOfClass(OfficerManagerEvent.class)) {
             listeners.removeListenerOfClass(OfficerManagerEvent.class);
             log.info("Removed vanilla listener");
-        }
+        }*/
 
 /// for save compatibility with 1.1.8
         if (sector.hasScript(OfficerManagerEventSkillOverhaul.class)) {
