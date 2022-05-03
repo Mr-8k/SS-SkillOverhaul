@@ -38,6 +38,14 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 //on first run, clean people for the new script
     @Override
     public void onEnabled(boolean wasEnabledBefore) {
+
+        SectorAPI sector = Global.getSector();
+        ListenerManagerAPI listeners = sector.getListenerManager();
+        if (listeners.hasListenerOfClass(OfficerManagerEvent.class)) {
+            listeners.removeListenerOfClass(OfficerManagerEvent.class);
+            log.info("Removed vanilla listener");
+        }
+
         cleanUpPeople();
     }
 
