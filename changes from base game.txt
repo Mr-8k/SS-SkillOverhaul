@@ -51,6 +51,10 @@ TECHNOLOGY
 Gunnery Implants
 - Elite effect now grants generalist projectile speed bonus
 
+Energy Weapon Mastery
+- Bonus granted at all ranges
+- Bonus maxes out at 15% instead of 30%, always grants at least 5%
+
 Electronic Warfare
 - Bonus changed from 1/1/1/1 to 1/2/3/4
 

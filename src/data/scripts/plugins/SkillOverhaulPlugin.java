@@ -27,7 +27,7 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 
     public static boolean hasNexerelin;
     public static Logger log = Global.getLogger(SkillOverhaulPlugin.class);
-    boolean onEnabled = false;
+    //boolean onEnabled = false;
 
     @Override
     public void onApplicationLoad() {
@@ -38,14 +38,6 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
 //on first run, clean people for the new script
     @Override
     public void onEnabled(boolean wasEnabledBefore) {
-
-        SectorAPI sector = Global.getSector();
-        ListenerManagerAPI listeners = sector.getListenerManager();
-        if (listeners.hasListenerOfClass(OfficerManagerEvent.class)) {
-            listeners.removeListenerOfClass(OfficerManagerEvent.class);
-            log.info("Removed vanilla listener");
-        }
-
         cleanUpPeople();
     }
 
@@ -56,14 +48,15 @@ public class SkillOverhaulPlugin extends BaseModPlugin {
         ListenerManagerAPI listeners = sector.getListenerManager();
 
 //remove vanilla script + listener
-        if (sector.hasScript(OfficerManagerEvent.class)) {
+        if (sector.hasScript(OfficerManagerEvent.class) && !sector.hasScript(OfficerManagerEventSkillOverhaul2.class)) {
             sector.removeScriptsOfClass(OfficerManagerEvent.class);
             log.info("Removed vanilla script");
         }
-/*        if (listeners.hasListenerOfClass(OfficerManagerEvent.class)) {
+
+        if (listeners.hasListenerOfClass(OfficerManagerEvent.class) && !listeners.hasListenerOfClass(OfficerManagerEventSkillOverhaul2.class)) {
             listeners.removeListenerOfClass(OfficerManagerEvent.class);
             log.info("Removed vanilla listener");
-        }*/
+        }
 
 /// for save compatibility with 1.1.8
         if (sector.hasScript(OfficerManagerEventSkillOverhaul.class)) {
