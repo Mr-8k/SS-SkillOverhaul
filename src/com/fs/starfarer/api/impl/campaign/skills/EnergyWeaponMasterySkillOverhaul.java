@@ -30,7 +30,7 @@ public class EnergyWeaponMasterySkillOverhaul {
 	//public static float MIN_RANGE = 600;
 	//public static float MAX_RANGE = 1000;
 	
-	public static float ENERGY_DAMAGE_PERCENT = 15;
+	public static float ENERGY_DAMAGE_PERCENT = 20;
 	public static float ENERGY_DAMAGE_PERCENT_MIN = 5;
 	//public static float ENERGY_DAMAGE_MIN_FLUX_LEVEL = 0.25f;
 	public static float ENERGY_DAMAGE_MIN_FLUX_LEVEL = 0;

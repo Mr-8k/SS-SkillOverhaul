@@ -10,7 +10,8 @@
   "adminSalaryTier1":10000,
   "adminSalaryTier2":20000,
   "adminSalaryTier3":25000,
-
+  
+  "maxPermanentHullmods":3,
 
   "SkillOverhaul_FIGHTER_BAYS_THRESHOLD":99999,
   "SkillOverhaul_OP_THRESHOLD":99999,

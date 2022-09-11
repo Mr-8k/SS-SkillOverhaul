@@ -1,3 +1,7 @@
+1.2.3
+-Default max s-mods set to 3
+-EWM max bonus from 15% to 20%, minimum unchanged
+
 1.2.2
 Energy Weapon Mastery
 -Bonus granted at all ranges
