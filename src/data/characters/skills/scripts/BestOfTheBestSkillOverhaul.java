@@ -90,11 +90,11 @@ public class BestOfTheBestSkillOverhaul {
 	
 	public static class Level2 implements CharacterStatsSkillEffect {
 		public void apply(MutableCharacterStatsAPI stats, String id, float level) {
-			stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MIN_FRACTION_OF_BATTLE_SIZE_BONUS_MOD).modifyFlat(id, DEPLOYMENT_BONUS);
+			stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_FRACTION_OF_BATTLE_SIZE_BONUS_MOD).modifyFlat(id, DEPLOYMENT_BONUS);
 		}
 
 		public void unapply(MutableCharacterStatsAPI stats, String id) {
-			stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MIN_FRACTION_OF_BATTLE_SIZE_BONUS_MOD).unmodifyFlat(id);
+			stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_FRACTION_OF_BATTLE_SIZE_BONUS_MOD).unmodifyFlat(id);
 		}
 
 		public String getEffectDescription(float level) {

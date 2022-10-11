@@ -42,6 +42,8 @@ Officer Management
 
 Best of the Best
 - Extra S-mod replaced with 10% OP bonus
+- Deployment bonus now functions more logically, stacking with control points instead of serving as a minimum
+(no more capturing points for no effect)
 
 Support Doctrine
 - Now also a colony skill, affects access and local fleet size (+30%/+25%)
