@@ -2,6 +2,7 @@
 - Best of the Best:
     - Deployment bonus now functions more logically, stacking with control points instead of serving as a minimum
     (no more capturing points for no effect)
+- 0.96 compatibility
 
 1.2.3
 -Default max s-mods set to 3

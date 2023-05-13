@@ -7,8 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="starsector-core 095" level="application" />
-    <orderEntry type="library" name="ExerelinCore 095" level="application" />
-    <orderEntry type="library" name="lw_Console 095" level="application" />
+    <orderEntry type="library" name="0.96 Starsector" level="application" />
+    <orderEntry type="library" name="0.96 ExerelinCore" level="application" />
+    <orderEntry type="library" name="0.96 lw_Console" level="application" />
   </component>
 </module>
