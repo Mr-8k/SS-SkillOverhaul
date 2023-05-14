@@ -1,3 +1,6 @@
+1.2.5
+-bugfixes
+
 1.2.4
 - Best of the Best:
     - Deployment bonus now functions more logically, stacking with control points instead of serving as a minimum
